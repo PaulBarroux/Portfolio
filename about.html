@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Paul Barroux — UX/UI Designer, 3rd-year student at L'École de Design Nantes Atlantique.">
+  <meta property="og:title" content="About — Paul Barroux">
+  <meta property="og:description" content="UX/UI Designer crafting thoughtful digital experiences.">
+  <meta property="og:type" content="website">
+  <title>About — Paul Barroux</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%232B59C3'/><text x='50%25' y='55%25' dominant-baseline='central' text-anchor='middle' fill='white' font-family='serif' font-size='20' font-weight='bold'>P</text></svg>">
+
+  <!-- Fonts & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <header class="navbar" role="banner">
+    <nav class="navbar__inner" role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="navbar__logo">Paul Barroux</a>
+      <div class="navbar__links">
+        <a href="index.html#projects" class="navbar__link">Projects</a>
+        <a href="about.html" class="navbar__link">About</a>
+        <a href="#contact" class="navbar__link">Contact</a>
+      </div>
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu__overlay" aria-hidden="true"></div>
+  <div class="mobile-menu" aria-hidden="true">
+    <a href="index.html#projects" class="mobile-menu__link">Projects</a>
+    <a href="about.html" class="mobile-menu__link">About</a>
+    <a href="#contact" class="mobile-menu__link">Contact</a>
+  </div>
+
+  <main>
+
+    <!-- ========== PAGE HERO ========== -->
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-hero__title reveal">About</h1>
+      </div>
+    </section>
+
+    <!-- ========== BIO ========== -->
+    <section class="about-bio">
+      <div class="container">
+        <p class="about-bio__text reveal">I'm Paul Barroux, a UX/UI designer currently in my third year at L'&Eacute;cole de Design Nantes Atlantique. My approach to design is rooted in understanding people &mdash; their needs, frustrations, and aspirations &mdash; and translating those insights into meaningful digital experiences.</p>
+
+        <p class="about-bio__text reveal" data-delay="100">I believe great design lives at the intersection of research and aesthetics. Every project I take on begins with deep listening: user interviews, contextual research, and careful analysis of the problem space. From there, I move through wireframing, prototyping, and iterative testing to arrive at solutions that are both functional and beautiful.</p>
+
+        <p class="about-bio__text reveal" data-delay="200">Beyond screens, I have a growing interest in the technical side of design. I work with HTML, CSS, and JavaScript to prototype ideas, and I'm exploring 3D and motion design to push the boundaries of what digital experiences can feel like.</p>
+
+        <p class="about-bio__text reveal" data-delay="300">When I'm not designing, you'll find me [placeholder for hobbies/interests &mdash; fill this in later].</p>
+      </div>
+    </section>
+
+    <!-- ========== SKILLS ========== -->
+    <section class="about-skills" id="skills">
+      <div class="container">
+        <h2 class="section-title reveal">Skills</h2>
+        <div class="expertise__grid">
+
+          <div class="expertise__column reveal" data-delay="0">
+            <span class="label expertise__column-title">UX Research</span>
+            <ul class="expertise__list">
+              <li class="expertise__item">User Interviews</li>
+              <li class="expertise__item">UX Audit</li>
+              <li class="expertise__item">Personas &amp; User Journeys</li>
+              <li class="expertise__item">Competitive Analysis</li>
+              <li class="expertise__item">Usability Testing</li>
+              <li class="expertise__item">Contextual Inquiry</li>
+            </ul>
+          </div>
+
+          <div class="expertise__column reveal" data-delay="100">
+            <span class="label expertise__column-title">UI Production</span>
+            <ul class="expertise__list">
+              <li class="expertise__item">Wireframing</li>
+              <li class="expertise__item">Interface Design</li>
+              <li class="expertise__item">Design Systems</li>
+              <li class="expertise__item">Prototyping</li>
+              <li class="expertise__item">User Testing &amp; Iterations</li>
+              <li class="expertise__item">Responsive Design</li>
+              <li class="expertise__item">Accessibility</li>
+            </ul>
+          </div>
+
+          <div class="expertise__column reveal" data-delay="200">
+            <span class="label expertise__column-title">Technical Skills</span>
+            <ul class="expertise__list">
+              <li class="expertise__item">HTML, CSS, JavaScript</li>
+              <li class="expertise__item">Figma</li>
+              <li class="expertise__item">Adobe Creative Suite</li>
+              <li class="expertise__item">3D (basics)</li>
+              <li class="expertise__item">Motion Design (basics)</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2 class="section-title reveal">Get in Touch</h2>
+        <p class="contact__text reveal" data-delay="100">Interested in working together? Let's talk.</p>
+        <a href="mailto:hello@paulbarroux.com" class="contact__email reveal" data-delay="200">hello@paulbarroux.com</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__copy">&copy; 2026 Paul Barroux &mdash; All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
