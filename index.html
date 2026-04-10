@@ -49,16 +49,155 @@
 
     <!-- ========== HERO ========== -->
     <section class="hero">
-      <div class="container hero__content">
-        <h1 class="hero__title reveal">Hi, I'm Paul Barroux.</h1>
-        <p class="hero__typing reveal" data-delay="100">I craft <span class="typing-text typing-cursor" id="typing-text"></span></p>
-        <p class="hero__intro reveal" data-delay="200">Currently a 3rd-year student at L'&Eacute;cole de Design Nantes Atlantique, I craft thoughtful digital experiences grounded in research and driven by purpose.</p>
+      <div class="container">
+        <div class="hero__left">
+          <h1 class="hero__title reveal">Hi, I'm Paul Barroux.</h1>
+          <p class="hero__typing reveal" data-delay="100">I craft <span class="typing-text typing-cursor" id="typing-text"></span></p>
+          <p class="hero__intro reveal" data-delay="200">Currently a 3rd-year student at L'&Eacute;cole de Design Nantes Atlantique, I craft thoughtful digital experiences grounded in research and driven by purpose.</p>
+        </div>
       </div>
       <div class="hero__scroll-indicator">
         <span>Scroll</span>
         <div class="hero__scroll-line"></div>
       </div>
     </section>
+
+    <!-- ========== SELECTED WORK — Scroll-locked carousel ========== -->
+    <div class="projects-wrapper" id="projects-wrapper">
+      <section class="projects" id="projects">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-label">Selected Work</span>
+            <span class="section-count">(5)</span>
+          </div>
+
+          <div class="projects__layout">
+            <!-- Featured project (left column) -->
+            <div class="projects__stage">
+              <a href="project-1.html" class="projects__slide active" data-index="0">
+                <div class="projects__slide-image">Project Image</div>
+                <h3 class="projects__slide-title">Project Alpha</h3>
+                <div class="projects__slide-tags">
+                  <span class="tag">UX Research</span>
+                  <span class="tag">Fintech</span>
+                  <span class="tag">App Design</span>
+                </div>
+              </a>
+              <a href="project-2.html" class="projects__slide" data-index="1">
+                <div class="projects__slide-image">Project Image</div>
+                <h3 class="projects__slide-title">Project Beta</h3>
+                <div class="projects__slide-tags">
+                  <span class="tag">Mobile App</span>
+                  <span class="tag">Sustainable Mobility</span>
+                  <span class="tag">UI Design</span>
+                </div>
+              </a>
+              <a href="project-3.html" class="projects__slide" data-index="2">
+                <div class="projects__slide-image">Project Image</div>
+                <h3 class="projects__slide-title">Project Gamma</h3>
+                <div class="projects__slide-tags">
+                  <span class="tag">UX/UI Design</span>
+                  <span class="tag">E-commerce</span>
+                  <span class="tag">Accessibility</span>
+                </div>
+              </a>
+              <a href="project-4.html" class="projects__slide" data-index="3">
+                <div class="projects__slide-image">Project Image</div>
+                <h3 class="projects__slide-title">Project Delta</h3>
+                <div class="projects__slide-tags">
+                  <span class="tag">Design System</span>
+                  <span class="tag">SaaS</span>
+                  <span class="tag">Component Library</span>
+                </div>
+              </a>
+              <a href="project-5.html" class="projects__slide" data-index="4">
+                <div class="projects__slide-image">Project Image</div>
+                <h3 class="projects__slide-title">Project Epsilon</h3>
+                <div class="projects__slide-tags">
+                  <span class="tag">Service Design</span>
+                  <span class="tag">Healthcare</span>
+                  <span class="tag">UX Research</span>
+                </div>
+              </a>
+            </div>
+
+            <!-- Project list sidebar (right column) -->
+            <div class="projects__list">
+              <button class="projects__list-item active" data-index="0" data-href="project-1.html">
+                <span class="projects__list-indicator"></span>
+                <span class="projects__list-name">Project Alpha</span>
+              </button>
+              <button class="projects__list-item" data-index="1" data-href="project-2.html">
+                <span class="projects__list-indicator"></span>
+                <span class="projects__list-name">Project Beta</span>
+              </button>
+              <button class="projects__list-item" data-index="2" data-href="project-3.html">
+                <span class="projects__list-indicator"></span>
+                <span class="projects__list-name">Project Gamma</span>
+              </button>
+              <button class="projects__list-item" data-index="3" data-href="project-4.html">
+                <span class="projects__list-indicator"></span>
+                <span class="projects__list-name">Project Delta</span>
+              </button>
+              <button class="projects__list-item" data-index="4" data-href="project-5.html">
+                <span class="projects__list-indicator"></span>
+                <span class="projects__list-name">Project Epsilon</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Mobile: stacked cards (hidden on desktop) -->
+          <div class="projects__mobile-list">
+            <a href="project-1.html" class="projects__mobile-card reveal">
+              <div class="projects__mobile-image">Project Image</div>
+              <h3 class="projects__mobile-title">Project Alpha</h3>
+              <div class="projects__mobile-tags">
+                <span class="tag">UX Research</span>
+                <span class="tag">Fintech</span>
+                <span class="tag">App Design</span>
+              </div>
+            </a>
+            <a href="project-2.html" class="projects__mobile-card reveal">
+              <div class="projects__mobile-image">Project Image</div>
+              <h3 class="projects__mobile-title">Project Beta</h3>
+              <div class="projects__mobile-tags">
+                <span class="tag">Mobile App</span>
+                <span class="tag">Sustainable Mobility</span>
+                <span class="tag">UI Design</span>
+              </div>
+            </a>
+            <a href="project-3.html" class="projects__mobile-card reveal">
+              <div class="projects__mobile-image">Project Image</div>
+              <h3 class="projects__mobile-title">Project Gamma</h3>
+              <div class="projects__mobile-tags">
+                <span class="tag">UX/UI Design</span>
+                <span class="tag">E-commerce</span>
+                <span class="tag">Accessibility</span>
+              </div>
+            </a>
+            <a href="project-4.html" class="projects__mobile-card reveal">
+              <div class="projects__mobile-image">Project Image</div>
+              <h3 class="projects__mobile-title">Project Delta</h3>
+              <div class="projects__mobile-tags">
+                <span class="tag">Design System</span>
+                <span class="tag">SaaS</span>
+                <span class="tag">Component Library</span>
+              </div>
+            </a>
+            <a href="project-5.html" class="projects__mobile-card reveal">
+              <div class="projects__mobile-image">Project Image</div>
+              <h3 class="projects__mobile-title">Project Epsilon</h3>
+              <div class="projects__mobile-tags">
+                <span class="tag">Service Design</span>
+                <span class="tag">Healthcare</span>
+                <span class="tag">UX Research</span>
+              </div>
+            </a>
+          </div>
+
+        </div>
+      </section>
+    </div>
 
     <!-- ========== EXPERTISE ========== -->
     <section class="expertise" id="expertise">
@@ -100,105 +239,6 @@
           </div>
 
         </div>
-      </div>
-    </section>
-
-    <!-- ========== SELECTED WORK ========== -->
-    <section class="projects" id="projects">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label">Selected Work</span>
-          <span class="section-count">(5)</span>
-        </div>
-
-        <div class="projects__layout reveal">
-          <!-- Featured project (left column) -->
-          <a href="project-1.html" class="projects__featured" id="featured-project">
-            <div class="projects__featured-image" id="featured-image">Project Image</div>
-            <h3 class="projects__featured-title" id="featured-title">Project Alpha</h3>
-            <div class="projects__featured-tags" id="featured-tags">
-              <span class="tag">UX Research</span>
-              <span class="tag">Fintech</span>
-              <span class="tag">App Design</span>
-            </div>
-          </a>
-
-          <!-- Project list (right column) -->
-          <div class="projects__list">
-            <button class="projects__list-item active" data-index="0" data-href="project-1.html" data-title="Project Alpha" data-tags="UX Research,Fintech,App Design">
-              <span class="projects__list-indicator"></span>
-              <span class="projects__list-name">Project Alpha</span>
-            </button>
-            <button class="projects__list-item" data-index="1" data-href="project-2.html" data-title="Project Beta" data-tags="Mobile App,Sustainable Mobility,UI Design">
-              <span class="projects__list-indicator"></span>
-              <span class="projects__list-name">Project Beta</span>
-            </button>
-            <button class="projects__list-item" data-index="2" data-href="project-3.html" data-title="Project Gamma" data-tags="UX/UI Design,E-commerce,Accessibility">
-              <span class="projects__list-indicator"></span>
-              <span class="projects__list-name">Project Gamma</span>
-            </button>
-            <button class="projects__list-item" data-index="3" data-href="project-4.html" data-title="Project Delta" data-tags="Design System,SaaS,Component Library">
-              <span class="projects__list-indicator"></span>
-              <span class="projects__list-name">Project Delta</span>
-            </button>
-            <button class="projects__list-item" data-index="4" data-href="project-5.html" data-title="Project Epsilon" data-tags="Service Design,Healthcare,UX Research">
-              <span class="projects__list-indicator"></span>
-              <span class="projects__list-name">Project Epsilon</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Mobile: stacked cards (hidden on desktop) -->
-        <div class="projects__mobile-list">
-          <a href="project-1.html" class="projects__mobile-card reveal">
-            <div class="projects__mobile-image">Project Image</div>
-            <h3 class="projects__mobile-title">Project Alpha</h3>
-            <div class="projects__mobile-tags">
-              <span class="tag">UX Research</span>
-              <span class="tag">Fintech</span>
-              <span class="tag">App Design</span>
-            </div>
-          </a>
-          <a href="project-2.html" class="projects__mobile-card reveal">
-            <div class="projects__mobile-image">Project Image</div>
-            <h3 class="projects__mobile-title">Project Beta</h3>
-            <div class="projects__mobile-tags">
-              <span class="tag">Mobile App</span>
-              <span class="tag">Sustainable Mobility</span>
-              <span class="tag">UI Design</span>
-            </div>
-          </a>
-          <a href="project-3.html" class="projects__mobile-card reveal">
-            <div class="projects__mobile-image">Project Image</div>
-            <h3 class="projects__mobile-title">Project Gamma</h3>
-            <div class="projects__mobile-tags">
-              <span class="tag">UX/UI Design</span>
-              <span class="tag">E-commerce</span>
-              <span class="tag">Accessibility</span>
-            </div>
-          </a>
-          <a href="project-4.html" class="projects__mobile-card reveal">
-            <div class="projects__mobile-image">Project Image</div>
-            <h3 class="projects__mobile-title">Project Delta</h3>
-            <div class="projects__mobile-tags">
-              <span class="tag">Design System</span>
-              <span class="tag">SaaS</span>
-              <span class="tag">Component Library</span>
-            </div>
-          </a>
-          <a href="project-5.html" class="projects__mobile-card reveal">
-            <div class="projects__mobile-image">Project Image</div>
-            <h3 class="projects__mobile-title">Project Epsilon</h3>
-            <div class="projects__mobile-tags">
-              <span class="tag">Service Design</span>
-              <span class="tag">Healthcare</span>
-              <span class="tag">UX Research</span>
-            </div>
-          </a>
-        </div>
-
-        <a href="#projects" class="see-all-link reveal">See all work <span class="see-all-link__arrow">&rarr;</span></a>
-
       </div>
     </section>
 

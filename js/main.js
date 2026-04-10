@@ -134,12 +134,10 @@
       var current = phrases[phraseIndex];
 
       if (!isDeleting) {
-        // Typing
         typingEl.textContent = current.substring(0, charIndex + 1);
         charIndex++;
 
         if (charIndex === current.length) {
-          // Finished typing — pause then start deleting
           setTimeout(function () {
             isDeleting = true;
             typeEffect();
@@ -148,12 +146,10 @@
         }
         setTimeout(typeEffect, typeSpeed);
       } else {
-        // Deleting
         typingEl.textContent = current.substring(0, charIndex - 1);
         charIndex--;
 
         if (charIndex === 0) {
-          // Finished deleting — move to next phrase
           isDeleting = false;
           phraseIndex = (phraseIndex + 1) % phrases.length;
           setTimeout(typeEffect, pauseAfterDelete);
@@ -163,48 +159,64 @@
       }
     }
 
-    // Start typing after 500ms delay
     setTimeout(typeEffect, 500);
   }
 
   /* -----------------------------------------
-     PROJECT SHOWCASE — Featured card + sidebar
+     SCROLL-LOCKED PROJECT CAROUSEL
      ----------------------------------------- */
-  var featuredLink = document.getElementById('featured-project');
-  var featuredImage = document.getElementById('featured-image');
-  var featuredTitle = document.getElementById('featured-title');
-  var featuredTags = document.getElementById('featured-tags');
+  var projectsWrapper = document.getElementById('projects-wrapper');
+  var slides = document.querySelectorAll('.projects__slide');
   var listItems = document.querySelectorAll('.projects__list-item');
+  var totalSlides = slides.length;
+  var currentSlide = 0;
 
-  if (listItems.length > 0 && featuredLink) {
+  function setActiveSlide(index) {
+    if (index === currentSlide) return;
+    if (index < 0 || index >= totalSlides) return;
+
+    slides[currentSlide].classList.remove('active');
+    listItems[currentSlide].classList.remove('active');
+
+    currentSlide = index;
+
+    slides[currentSlide].classList.add('active');
+    listItems[currentSlide].classList.add('active');
+  }
+
+  // Desktop only: scroll-position-based switching
+  if (projectsWrapper && totalSlides > 0) {
+    var isMobile = window.matchMedia('(max-width: 767px)');
+
+    function handleCarouselScroll() {
+      if (isMobile.matches) return;
+
+      var rect = projectsWrapper.getBoundingClientRect();
+      var wrapperHeight = projectsWrapper.offsetHeight;
+      var scrolled = -rect.top; // How far into the wrapper we've scrolled
+      var scrollRange = wrapperHeight - window.innerHeight;
+
+      if (scrolled < 0 || scrollRange <= 0) return;
+
+      var progress = Math.min(Math.max(scrolled / scrollRange, 0), 1);
+      // Map progress 0-1 to slide indices 0 to (totalSlides - 1)
+      var slideIndex = Math.min(
+        Math.floor(progress * totalSlides),
+        totalSlides - 1
+      );
+
+      setActiveSlide(slideIndex);
+    }
+
+    window.addEventListener('scroll', handleCarouselScroll, { passive: true });
+
+    // Sidebar hover and click
     listItems.forEach(function (item) {
-      // On hover: update the featured card
       item.addEventListener('mouseenter', function () {
-        var href = this.dataset.href;
-        var title = this.dataset.title;
-        var tags = this.dataset.tags.split(',');
-
-        // Update active state
-        listItems.forEach(function (li) {
-          li.classList.remove('active');
-        });
-        this.classList.add('active');
-
-        // Update featured card
-        featuredLink.href = href;
-        featuredTitle.textContent = title;
-
-        // Update tags
-        featuredTags.innerHTML = '';
-        tags.forEach(function (tag) {
-          var span = document.createElement('span');
-          span.className = 'tag';
-          span.textContent = tag.trim();
-          featuredTags.appendChild(span);
-        });
+        var idx = parseInt(this.dataset.index, 10);
+        setActiveSlide(idx);
       });
 
-      // On click: navigate to the project page
       item.addEventListener('click', function () {
         window.location.href = this.dataset.href;
       });
