@@ -112,32 +112,102 @@
   }
 
   /* -----------------------------------------
-     STAGGERED PROJECT CARDS
+     TYPING EFFECT — Hero rotating words
      ----------------------------------------- */
-  const projectCards = document.querySelectorAll('.project-card');
+  var typingEl = document.getElementById('typing-text');
 
-  if (projectCards.length > 0 && 'IntersectionObserver' in window) {
-    const cardObserver = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            // Find the index of this card among all project cards
-            const cards = Array.from(projectCards);
-            const index = cards.indexOf(entry.target);
-            entry.target.style.transitionDelay = index * 150 + 'ms';
-            entry.target.classList.add('visible');
-            cardObserver.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.05,
-        rootMargin: '0px 0px -20px 0px',
+  if (typingEl) {
+    var phrases = [
+      'meaningful experiences',
+      'thoughtful interfaces',
+      'user-centered solutions',
+    ];
+    var phraseIndex = 0;
+    var charIndex = 0;
+    var isDeleting = false;
+    var typeSpeed = 80;
+    var deleteSpeed = 40;
+    var pauseAfterType = 2000;
+    var pauseAfterDelete = 500;
+
+    function typeEffect() {
+      var current = phrases[phraseIndex];
+
+      if (!isDeleting) {
+        // Typing
+        typingEl.textContent = current.substring(0, charIndex + 1);
+        charIndex++;
+
+        if (charIndex === current.length) {
+          // Finished typing — pause then start deleting
+          setTimeout(function () {
+            isDeleting = true;
+            typeEffect();
+          }, pauseAfterType);
+          return;
+        }
+        setTimeout(typeEffect, typeSpeed);
+      } else {
+        // Deleting
+        typingEl.textContent = current.substring(0, charIndex - 1);
+        charIndex--;
+
+        if (charIndex === 0) {
+          // Finished deleting — move to next phrase
+          isDeleting = false;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+          setTimeout(typeEffect, pauseAfterDelete);
+          return;
+        }
+        setTimeout(typeEffect, deleteSpeed);
       }
-    );
+    }
 
-    projectCards.forEach(function (card) {
-      cardObserver.observe(card);
+    // Start typing after 500ms delay
+    setTimeout(typeEffect, 500);
+  }
+
+  /* -----------------------------------------
+     PROJECT SHOWCASE — Featured card + sidebar
+     ----------------------------------------- */
+  var featuredLink = document.getElementById('featured-project');
+  var featuredImage = document.getElementById('featured-image');
+  var featuredTitle = document.getElementById('featured-title');
+  var featuredTags = document.getElementById('featured-tags');
+  var listItems = document.querySelectorAll('.projects__list-item');
+
+  if (listItems.length > 0 && featuredLink) {
+    listItems.forEach(function (item) {
+      // On hover: update the featured card
+      item.addEventListener('mouseenter', function () {
+        var href = this.dataset.href;
+        var title = this.dataset.title;
+        var tags = this.dataset.tags.split(',');
+
+        // Update active state
+        listItems.forEach(function (li) {
+          li.classList.remove('active');
+        });
+        this.classList.add('active');
+
+        // Update featured card
+        featuredLink.href = href;
+        featuredTitle.textContent = title;
+
+        // Update tags
+        featuredTags.innerHTML = '';
+        tags.forEach(function (tag) {
+          var span = document.createElement('span');
+          span.className = 'tag';
+          span.textContent = tag.trim();
+          featuredTags.appendChild(span);
+        });
+      });
+
+      // On click: navigate to the project page
+      item.addEventListener('click', function () {
+        window.location.href = this.dataset.href;
+      });
     });
   }
 
