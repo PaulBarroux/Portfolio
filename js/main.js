@@ -112,55 +112,113 @@
   }
 
   /* -----------------------------------------
-     TYPING EFFECT — Hero rotating words
+     LANGUAGE TOGGLE — EN / 中文
+     CSS already hides the inactive language via [data-lang] rules.
+     This controls: <html lang>, button active state, persisted choice,
+     typing animation prefix + phrases, and document title.
      ----------------------------------------- */
-  var typingEl = document.getElementById('typing-text');
+  var STORAGE_KEY = 'pb_lang';
+  var TITLES = {
+    en: { home: "Paul Barroux — UX/UI Designer", about: "About — Paul Barroux", project: null },
+    zh: { home: "Paul Barroux — UX/UI 设计师", about: "关于 — Paul Barroux", project: null }
+  };
 
-  if (typingEl) {
-    var phrases = [
-      'meaningful experiences',
-      'thoughtful interfaces',
-      'user-centered solutions',
-    ];
-    var phraseIndex = 0;
-    var charIndex = 0;
-    var isDeleting = false;
-    var typeSpeed = 80;
-    var deleteSpeed = 40;
-    var pauseAfterType = 2000;
-    var pauseAfterDelete = 500;
+  var TYPING = {
+    en: { prefix: 'I craft ', phrases: ['meaningful experiences', 'thoughtful interfaces', 'user-centered solutions'] },
+    zh: { prefix: '我创造', phrases: ['有意义的体验', '用心设计的界面', '以用户为中心的解决方案'] }
+  };
 
-    function typeEffect() {
-      var current = phrases[phraseIndex];
+  function detectInitialLang() {
+    try {
+      var stored = localStorage.getItem(STORAGE_KEY);
+      if (stored === 'en' || stored === 'zh') return stored;
+    } catch (e) { /* localStorage may be blocked */ }
+    var nav = (navigator.language || navigator.userLanguage || '').toLowerCase();
+    return nav.indexOf('zh') === 0 ? 'zh' : 'en';
+  }
 
-      if (!isDeleting) {
-        typingEl.textContent = current.substring(0, charIndex + 1);
-        charIndex++;
+  var currentLang = detectInitialLang();
 
-        if (charIndex === current.length) {
-          setTimeout(function () {
-            isDeleting = true;
-            typeEffect();
-          }, pauseAfterType);
-          return;
-        }
-        setTimeout(typeEffect, typeSpeed);
-      } else {
-        typingEl.textContent = current.substring(0, charIndex - 1);
-        charIndex--;
+  function applyLang(lang) {
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
 
-        if (charIndex === 0) {
-          isDeleting = false;
-          phraseIndex = (phraseIndex + 1) % phrases.length;
-          setTimeout(typeEffect, pauseAfterDelete);
-          return;
-        }
-        setTimeout(typeEffect, deleteSpeed);
-      }
+    // Toggle active state on every lang-toggle button on the page
+    var btns = document.querySelectorAll('.lang-toggle__btn');
+    btns.forEach(function (b) {
+      b.classList.toggle('active', b.dataset.setLang === lang);
+    });
+
+    // Update document title if a translation exists for this page
+    var pageKey = document.body.dataset.page; // 'home' | 'about' | 'project'
+    if (pageKey && TITLES[lang] && TITLES[lang][pageKey]) {
+      document.title = TITLES[lang][pageKey];
     }
 
-    setTimeout(typeEffect, 500);
+    // Restart typing animation in the right language
+    restartTyping();
   }
+
+  // Wire up every toggle button (works on both navbar and mobile menu)
+  document.querySelectorAll('.lang-toggle__btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      applyLang(btn.dataset.setLang);
+    });
+  });
+
+  /* -----------------------------------------
+     TYPING EFFECT — bilingual, restartable
+     ----------------------------------------- */
+  var typingEl = document.getElementById('typing-text');
+  var typingPrefixEl = document.getElementById('typing-prefix');
+  var typingTimer = null;
+  var typingState = { phraseIndex: 0, charIndex: 0, isDeleting: false };
+  var typeSpeed = 80;
+  var deleteSpeed = 40;
+  var pauseAfterType = 2000;
+  var pauseAfterDelete = 500;
+
+  function typeStep() {
+    if (!typingEl) return;
+    var data = TYPING[currentLang];
+    var current = data.phrases[typingState.phraseIndex % data.phrases.length];
+
+    if (!typingState.isDeleting) {
+      typingEl.textContent = current.substring(0, typingState.charIndex + 1);
+      typingState.charIndex++;
+      if (typingState.charIndex === current.length) {
+        typingTimer = setTimeout(function () {
+          typingState.isDeleting = true;
+          typeStep();
+        }, pauseAfterType);
+        return;
+      }
+      typingTimer = setTimeout(typeStep, typeSpeed);
+    } else {
+      typingEl.textContent = current.substring(0, typingState.charIndex - 1);
+      typingState.charIndex--;
+      if (typingState.charIndex === 0) {
+        typingState.isDeleting = false;
+        typingState.phraseIndex = (typingState.phraseIndex + 1) % data.phrases.length;
+        typingTimer = setTimeout(typeStep, pauseAfterDelete);
+        return;
+      }
+      typingTimer = setTimeout(typeStep, deleteSpeed);
+    }
+  }
+
+  function restartTyping() {
+    if (!typingEl) return;
+    if (typingTimer) clearTimeout(typingTimer);
+    if (typingPrefixEl) typingPrefixEl.textContent = TYPING[currentLang].prefix;
+    typingEl.textContent = '';
+    typingState = { phraseIndex: 0, charIndex: 0, isDeleting: false };
+    typingTimer = setTimeout(typeStep, 500);
+  }
+
+  // Apply initial language now that all handlers exist (this also kicks off typing)
+  applyLang(currentLang);
 
   /* -----------------------------------------
      SCROLL-LOCKED PROJECT CAROUSEL

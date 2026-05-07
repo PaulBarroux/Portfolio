@@ -12,22 +12,35 @@
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%232B59C3'/><text x='50%25' y='55%25' dominant-baseline='central' text-anchor='middle' fill='white' font-family='serif' font-size='20' font-weight='bold'>P</text></svg>">
 
-  <!-- Fonts & Styles -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Fonts (self-hosted) & Styles -->
+  <link rel="preload" href="assets/fonts/Inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/DMSerifDisplay-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body data-page="home">
 
   <!-- ========== NAVIGATION ========== -->
   <header class="navbar" role="banner">
     <nav class="navbar__inner" role="navigation" aria-label="Main navigation">
       <a href="index.html" class="navbar__logo">Paul Barroux</a>
       <div class="navbar__links">
-        <a href="#projects" class="navbar__link">Projects</a>
-        <a href="about.html" class="navbar__link">About</a>
-        <a href="#contact" class="navbar__link">Contact</a>
+        <a href="#projects" class="navbar__link">
+          <span data-lang="en">Projects</span>
+          <span data-lang="zh">项目</span>
+        </a>
+        <a href="about.html" class="navbar__link">
+          <span data-lang="en">About</span>
+          <span data-lang="zh">关于</span>
+        </a>
+        <a href="#contact" class="navbar__link">
+          <span data-lang="en">Contact</span>
+          <span data-lang="zh">联系</span>
+        </a>
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button class="lang-toggle__btn active" data-set-lang="en" type="button" aria-label="English">EN</button>
+          <span class="lang-toggle__sep" aria-hidden="true">/</span>
+          <button class="lang-toggle__btn" data-set-lang="zh" type="button" aria-label="中文">中</button>
+        </div>
       </div>
       <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span class="hamburger__line"></span>
@@ -40,9 +53,23 @@
   <!-- Mobile menu -->
   <div class="mobile-menu__overlay" aria-hidden="true"></div>
   <div class="mobile-menu" aria-hidden="true">
-    <a href="#projects" class="mobile-menu__link">Projects</a>
-    <a href="about.html" class="mobile-menu__link">About</a>
-    <a href="#contact" class="mobile-menu__link">Contact</a>
+    <a href="#projects" class="mobile-menu__link">
+      <span data-lang="en">Projects</span>
+      <span data-lang="zh">项目</span>
+    </a>
+    <a href="about.html" class="mobile-menu__link">
+      <span data-lang="en">About</span>
+      <span data-lang="zh">关于</span>
+    </a>
+    <a href="#contact" class="mobile-menu__link">
+      <span data-lang="en">Contact</span>
+      <span data-lang="zh">联系</span>
+    </a>
+    <div class="lang-toggle lang-toggle--mobile" role="group" aria-label="Language">
+      <button class="lang-toggle__btn active" data-set-lang="en" type="button">EN</button>
+      <span class="lang-toggle__sep" aria-hidden="true">/</span>
+      <button class="lang-toggle__btn" data-set-lang="zh" type="button">中</button>
+    </div>
   </div>
 
   <main>
@@ -51,13 +78,22 @@
     <section class="hero">
       <div class="container">
         <div class="hero__left">
-          <h1 class="hero__title reveal">Hi, I'm Paul Barroux.</h1>
-          <p class="hero__typing reveal" data-delay="100">I craft <span class="typing-text typing-cursor" id="typing-text"></span></p>
-          <p class="hero__intro reveal" data-delay="200">Currently a 3rd-year student at L'&Eacute;cole de Design Nantes Atlantique, I craft thoughtful digital experiences grounded in research and driven by purpose.</p>
+          <h1 class="hero__title reveal">
+            <span data-lang="en">Hi, I'm Paul Barroux.</span>
+            <span data-lang="zh">你好，我是 Paul Barroux。</span>
+          </h1>
+          <p class="hero__typing reveal" data-delay="100"><span id="typing-prefix">I craft </span><span class="typing-text typing-cursor" id="typing-text"></span></p>
+          <p class="hero__intro reveal" data-delay="200">
+            <span data-lang="en">Currently a 3rd-year student at L'&Eacute;cole de Design Nantes Atlantique, I craft thoughtful digital experiences grounded in research and driven by purpose.</span>
+            <span data-lang="zh">我目前是法国南特大西洋设计学院 (L'&Eacute;cole de Design Nantes Atlantique) 三年级学生，致力于打造源于研究、富有目的的数字体验。</span>
+          </p>
         </div>
       </div>
       <div class="hero__scroll-indicator">
-        <span>Scroll</span>
+        <span>
+          <span data-lang="en">Scroll</span>
+          <span data-lang="zh">向下滚动</span>
+        </span>
         <div class="hero__scroll-line"></div>
       </div>
     </section>
@@ -67,7 +103,10 @@
       <section class="projects" id="projects">
         <div class="container">
           <div class="section-header">
-            <span class="section-label">Selected Work</span>
+            <span class="section-label">
+              <span data-lang="en">Selected Work</span>
+              <span data-lang="zh">精选作品</span>
+            </span>
             <span class="section-count">(5)</span>
           </div>
 
@@ -203,38 +242,50 @@
     <section class="expertise" id="expertise">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-label">Expertise</span>
+          <span class="section-label">
+            <span data-lang="en">Expertise</span>
+            <span data-lang="zh">专业能力</span>
+          </span>
           <span class="section-count">(3)</span>
         </div>
         <div class="expertise__grid">
 
           <div class="expertise__column reveal" data-delay="0">
-            <span class="label expertise__column-title">UX Research</span>
+            <span class="label expertise__column-title">
+              <span data-lang="en">UX Research</span>
+              <span data-lang="zh">UX 研究</span>
+            </span>
             <ul class="expertise__list">
-              <li class="expertise__item">User Interviews</li>
-              <li class="expertise__item">UX Audit</li>
-              <li class="expertise__item">Personas &amp; User Journeys</li>
-              <li class="expertise__item">Competitive Analysis</li>
+              <li class="expertise__item"><span data-lang="en">User Interviews</span><span data-lang="zh">用户访谈</span></li>
+              <li class="expertise__item"><span data-lang="en">UX Audit</span><span data-lang="zh">UX 审计</span></li>
+              <li class="expertise__item"><span data-lang="en">Personas &amp; User Journeys</span><span data-lang="zh">用户画像与用户旅程</span></li>
+              <li class="expertise__item"><span data-lang="en">Competitive Analysis</span><span data-lang="zh">竞品分析</span></li>
             </ul>
           </div>
 
           <div class="expertise__column reveal" data-delay="100">
-            <span class="label expertise__column-title">UI Production</span>
+            <span class="label expertise__column-title">
+              <span data-lang="en">UI Production</span>
+              <span data-lang="zh">UI 设计</span>
+            </span>
             <ul class="expertise__list">
-              <li class="expertise__item">Wireframing</li>
-              <li class="expertise__item">Interface Design</li>
-              <li class="expertise__item">Design Systems</li>
-              <li class="expertise__item">Prototyping</li>
-              <li class="expertise__item">User Testing &amp; Iterations</li>
+              <li class="expertise__item"><span data-lang="en">Wireframing</span><span data-lang="zh">线框图设计</span></li>
+              <li class="expertise__item"><span data-lang="en">Interface Design</span><span data-lang="zh">界面设计</span></li>
+              <li class="expertise__item"><span data-lang="en">Design Systems</span><span data-lang="zh">设计系统</span></li>
+              <li class="expertise__item"><span data-lang="en">Prototyping</span><span data-lang="zh">原型设计</span></li>
+              <li class="expertise__item"><span data-lang="en">User Testing &amp; Iterations</span><span data-lang="zh">用户测试与迭代</span></li>
             </ul>
           </div>
 
           <div class="expertise__column reveal" data-delay="200">
-            <span class="label expertise__column-title">Technical Skills</span>
+            <span class="label expertise__column-title">
+              <span data-lang="en">Technical Skills</span>
+              <span data-lang="zh">技术技能</span>
+            </span>
             <ul class="expertise__list">
               <li class="expertise__item">HTML, CSS, JavaScript</li>
-              <li class="expertise__item">3D (basics)</li>
-              <li class="expertise__item">Motion Design (basics)</li>
+              <li class="expertise__item"><span data-lang="en">3D (basics)</span><span data-lang="zh">3D（基础）</span></li>
+              <li class="expertise__item"><span data-lang="en">Motion Design (basics)</span><span data-lang="zh">动效设计（基础）</span></li>
             </ul>
           </div>
 
@@ -245,9 +296,32 @@
     <!-- ========== CONTACT ========== -->
     <section class="contact" id="contact">
       <div class="container">
-        <h2 class="section-title reveal">Get in Touch</h2>
-        <p class="contact__text reveal" data-delay="100">Interested in working together? Let's talk.</p>
+        <h2 class="section-title reveal">
+          <span data-lang="en">Get in Touch</span>
+          <span data-lang="zh">联系我</span>
+        </h2>
+        <p class="contact__text reveal" data-delay="100">
+          <span data-lang="en">Interested in working together? Let's talk.</span>
+          <span data-lang="zh">想合作？欢迎联系。</span>
+        </p>
         <a href="mailto:hello@paulbarroux.com" class="contact__email reveal" data-delay="200">hello@paulbarroux.com</a>
+
+        <div class="contact__wechat reveal" data-delay="300">
+          <p class="contact__wechat-label">
+            <span data-lang="en">or find me on WeChat</span>
+            <span data-lang="zh">或在微信添加我</span>
+          </p>
+          <div class="contact__wechat-card">
+            <div class="contact__wechat-qr" aria-label="WeChat QR code">
+              <span data-lang="en">QR&nbsp;code<br>coming&nbsp;soon</span>
+              <span data-lang="zh">二维码<br>稍后上传</span>
+            </div>
+            <div class="contact__wechat-info">
+              <span class="contact__wechat-name">Paul Barroux</span>
+              <span class="contact__wechat-id">wxid_ddw1kou7jqh212</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -256,7 +330,10 @@
   <!-- ========== FOOTER ========== -->
   <footer class="footer">
     <div class="container">
-      <p class="footer__copy">&copy; 2026 Paul Barroux &mdash; All rights reserved.</p>
+      <p class="footer__copy">
+        <span data-lang="en">&copy; 2026 Paul Barroux &mdash; All rights reserved.</span>
+        <span data-lang="zh">&copy; 2026 Paul Barroux &mdash; 保留所有权利。</span>
+      </p>
     </div>
   </footer>
 

@@ -12,22 +12,35 @@
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%232B59C3'/><text x='50%25' y='55%25' dominant-baseline='central' text-anchor='middle' fill='white' font-family='serif' font-size='20' font-weight='bold'>P</text></svg>">
 
-  <!-- Fonts & Styles -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Fonts (self-hosted) & Styles -->
+  <link rel="preload" href="assets/fonts/Inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/DMSerifDisplay-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body data-page="about">
 
   <!-- ========== NAVIGATION ========== -->
   <header class="navbar" role="banner">
     <nav class="navbar__inner" role="navigation" aria-label="Main navigation">
       <a href="index.html" class="navbar__logo">Paul Barroux</a>
       <div class="navbar__links">
-        <a href="index.html#projects" class="navbar__link">Projects</a>
-        <a href="about.html" class="navbar__link">About</a>
-        <a href="#contact" class="navbar__link">Contact</a>
+        <a href="index.html#projects" class="navbar__link">
+          <span data-lang="en">Projects</span>
+          <span data-lang="zh">项目</span>
+        </a>
+        <a href="about.html" class="navbar__link">
+          <span data-lang="en">About</span>
+          <span data-lang="zh">关于</span>
+        </a>
+        <a href="#contact" class="navbar__link">
+          <span data-lang="en">Contact</span>
+          <span data-lang="zh">联系</span>
+        </a>
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button class="lang-toggle__btn active" data-set-lang="en" type="button" aria-label="English">EN</button>
+          <span class="lang-toggle__sep" aria-hidden="true">/</span>
+          <button class="lang-toggle__btn" data-set-lang="zh" type="button" aria-label="中文">中</button>
+        </div>
       </div>
       <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span class="hamburger__line"></span>
@@ -40,9 +53,23 @@
   <!-- Mobile menu -->
   <div class="mobile-menu__overlay" aria-hidden="true"></div>
   <div class="mobile-menu" aria-hidden="true">
-    <a href="index.html#projects" class="mobile-menu__link">Projects</a>
-    <a href="about.html" class="mobile-menu__link">About</a>
-    <a href="#contact" class="mobile-menu__link">Contact</a>
+    <a href="index.html#projects" class="mobile-menu__link">
+      <span data-lang="en">Projects</span>
+      <span data-lang="zh">项目</span>
+    </a>
+    <a href="about.html" class="mobile-menu__link">
+      <span data-lang="en">About</span>
+      <span data-lang="zh">关于</span>
+    </a>
+    <a href="#contact" class="mobile-menu__link">
+      <span data-lang="en">Contact</span>
+      <span data-lang="zh">联系</span>
+    </a>
+    <div class="lang-toggle lang-toggle--mobile" role="group" aria-label="Language">
+      <button class="lang-toggle__btn active" data-set-lang="en" type="button">EN</button>
+      <span class="lang-toggle__sep" aria-hidden="true">/</span>
+      <button class="lang-toggle__btn" data-set-lang="zh" type="button">中</button>
+    </div>
   </div>
 
   <main>
@@ -50,62 +77,89 @@
     <!-- ========== PAGE HERO ========== -->
     <section class="page-hero">
       <div class="container">
-        <h1 class="page-hero__title reveal">About</h1>
+        <h1 class="page-hero__title reveal">
+          <span data-lang="en">About</span>
+          <span data-lang="zh">关于</span>
+        </h1>
       </div>
     </section>
 
     <!-- ========== BIO ========== -->
     <section class="about-bio">
       <div class="container">
-        <p class="about-bio__text reveal">I'm Paul Barroux, a UX/UI designer currently in my third year at L'&Eacute;cole de Design Nantes Atlantique. My approach to design is rooted in understanding people &mdash; their needs, frustrations, and aspirations &mdash; and translating those insights into meaningful digital experiences.</p>
+        <p class="about-bio__text reveal">
+          <span data-lang="en">I'm Paul Barroux, a UX/UI designer currently in my third year at L'&Eacute;cole de Design Nantes Atlantique. My approach to design is rooted in understanding people &mdash; their needs, frustrations, and aspirations &mdash; and translating those insights into meaningful digital experiences.</span>
+          <span data-lang="zh">我是 Paul Barroux，一名 UX/UI 设计师，目前就读于法国南特大西洋设计学院 (L'&Eacute;cole de Design Nantes Atlantique) 三年级。我的设计方法源于对人的理解 &mdash; 他们的需求、痛点与愿望 &mdash; 并将这些洞察转化为有意义的数字体验。</span>
+        </p>
 
-        <p class="about-bio__text reveal" data-delay="100">I believe great design lives at the intersection of research and aesthetics. Every project I take on begins with deep listening: user interviews, contextual research, and careful analysis of the problem space. From there, I move through wireframing, prototyping, and iterative testing to arrive at solutions that are both functional and beautiful.</p>
+        <p class="about-bio__text reveal" data-delay="100">
+          <span data-lang="en">I believe great design lives at the intersection of research and aesthetics. Every project I take on begins with deep listening: user interviews, contextual research, and careful analysis of the problem space. From there, I move through wireframing, prototyping, and iterative testing to arrive at solutions that are both functional and beautiful.</span>
+          <span data-lang="zh">我相信优秀的设计存在于研究与美学的交汇处。每个项目都始于深度倾听：用户访谈、情境研究以及对问题的细致分析。在此基础上，我通过线框图、原型设计和迭代测试，最终得出兼具功能与美感的方案。</span>
+        </p>
 
-        <p class="about-bio__text reveal" data-delay="200">Beyond screens, I have a growing interest in the technical side of design. I work with HTML, CSS, and JavaScript to prototype ideas, and I'm exploring 3D and motion design to push the boundaries of what digital experiences can feel like.</p>
+        <p class="about-bio__text reveal" data-delay="200">
+          <span data-lang="en">Beyond screens, I have a growing interest in the technical side of design. I work with HTML, CSS, and JavaScript to prototype ideas, and I'm exploring 3D and motion design to push the boundaries of what digital experiences can feel like.</span>
+          <span data-lang="zh">除了屏幕之外，我对设计的技术层面也越来越感兴趣。我使用 HTML、CSS 和 JavaScript 制作原型，同时探索 3D 与动效设计，以拓展数字体验的可能性。</span>
+        </p>
 
-        <p class="about-bio__text reveal" data-delay="300">When I'm not designing, you'll find me [placeholder for hobbies/interests &mdash; fill this in later].</p>
+        <p class="about-bio__text reveal" data-delay="300">
+          <span data-lang="en">When I'm not designing, you'll find me [placeholder for hobbies/interests &mdash; fill this in later].</span>
+          <span data-lang="zh">不工作时，你可以找到我 [兴趣爱好待填]。</span>
+        </p>
       </div>
     </section>
 
     <!-- ========== SKILLS ========== -->
     <section class="about-skills" id="skills">
       <div class="container">
-        <h2 class="section-title reveal">Skills</h2>
+        <h2 class="section-title reveal">
+          <span data-lang="en">Skills</span>
+          <span data-lang="zh">技能</span>
+        </h2>
         <div class="expertise__grid">
 
           <div class="expertise__column reveal" data-delay="0">
-            <span class="label expertise__column-title">UX Research</span>
+            <span class="label expertise__column-title">
+              <span data-lang="en">UX Research</span>
+              <span data-lang="zh">UX 研究</span>
+            </span>
             <ul class="expertise__list">
-              <li class="expertise__item">User Interviews</li>
-              <li class="expertise__item">UX Audit</li>
-              <li class="expertise__item">Personas &amp; User Journeys</li>
-              <li class="expertise__item">Competitive Analysis</li>
-              <li class="expertise__item">Usability Testing</li>
-              <li class="expertise__item">Contextual Inquiry</li>
+              <li class="expertise__item"><span data-lang="en">User Interviews</span><span data-lang="zh">用户访谈</span></li>
+              <li class="expertise__item"><span data-lang="en">UX Audit</span><span data-lang="zh">UX 审计</span></li>
+              <li class="expertise__item"><span data-lang="en">Personas &amp; User Journeys</span><span data-lang="zh">用户画像与用户旅程</span></li>
+              <li class="expertise__item"><span data-lang="en">Competitive Analysis</span><span data-lang="zh">竞品分析</span></li>
+              <li class="expertise__item"><span data-lang="en">Usability Testing</span><span data-lang="zh">可用性测试</span></li>
+              <li class="expertise__item"><span data-lang="en">Contextual Inquiry</span><span data-lang="zh">情境调查</span></li>
             </ul>
           </div>
 
           <div class="expertise__column reveal" data-delay="100">
-            <span class="label expertise__column-title">UI Production</span>
+            <span class="label expertise__column-title">
+              <span data-lang="en">UI Production</span>
+              <span data-lang="zh">UI 设计</span>
+            </span>
             <ul class="expertise__list">
-              <li class="expertise__item">Wireframing</li>
-              <li class="expertise__item">Interface Design</li>
-              <li class="expertise__item">Design Systems</li>
-              <li class="expertise__item">Prototyping</li>
-              <li class="expertise__item">User Testing &amp; Iterations</li>
-              <li class="expertise__item">Responsive Design</li>
-              <li class="expertise__item">Accessibility</li>
+              <li class="expertise__item"><span data-lang="en">Wireframing</span><span data-lang="zh">线框图设计</span></li>
+              <li class="expertise__item"><span data-lang="en">Interface Design</span><span data-lang="zh">界面设计</span></li>
+              <li class="expertise__item"><span data-lang="en">Design Systems</span><span data-lang="zh">设计系统</span></li>
+              <li class="expertise__item"><span data-lang="en">Prototyping</span><span data-lang="zh">原型设计</span></li>
+              <li class="expertise__item"><span data-lang="en">User Testing &amp; Iterations</span><span data-lang="zh">用户测试与迭代</span></li>
+              <li class="expertise__item"><span data-lang="en">Responsive Design</span><span data-lang="zh">响应式设计</span></li>
+              <li class="expertise__item"><span data-lang="en">Accessibility</span><span data-lang="zh">无障碍设计</span></li>
             </ul>
           </div>
 
           <div class="expertise__column reveal" data-delay="200">
-            <span class="label expertise__column-title">Technical Skills</span>
+            <span class="label expertise__column-title">
+              <span data-lang="en">Technical Skills</span>
+              <span data-lang="zh">技术技能</span>
+            </span>
             <ul class="expertise__list">
               <li class="expertise__item">HTML, CSS, JavaScript</li>
               <li class="expertise__item">Figma</li>
-              <li class="expertise__item">Adobe Creative Suite</li>
-              <li class="expertise__item">3D (basics)</li>
-              <li class="expertise__item">Motion Design (basics)</li>
+              <li class="expertise__item"><span data-lang="en">Adobe Creative Suite</span><span data-lang="zh">Adobe 创意套件</span></li>
+              <li class="expertise__item"><span data-lang="en">3D (basics)</span><span data-lang="zh">3D（基础）</span></li>
+              <li class="expertise__item"><span data-lang="en">Motion Design (basics)</span><span data-lang="zh">动效设计（基础）</span></li>
             </ul>
           </div>
 
@@ -116,9 +170,32 @@
     <!-- ========== CONTACT ========== -->
     <section class="contact" id="contact">
       <div class="container">
-        <h2 class="section-title reveal">Get in Touch</h2>
-        <p class="contact__text reveal" data-delay="100">Interested in working together? Let's talk.</p>
+        <h2 class="section-title reveal">
+          <span data-lang="en">Get in Touch</span>
+          <span data-lang="zh">联系我</span>
+        </h2>
+        <p class="contact__text reveal" data-delay="100">
+          <span data-lang="en">Interested in working together? Let's talk.</span>
+          <span data-lang="zh">想合作？欢迎联系。</span>
+        </p>
         <a href="mailto:hello@paulbarroux.com" class="contact__email reveal" data-delay="200">hello@paulbarroux.com</a>
+
+        <div class="contact__wechat reveal" data-delay="300">
+          <p class="contact__wechat-label">
+            <span data-lang="en">or find me on WeChat</span>
+            <span data-lang="zh">或在微信添加我</span>
+          </p>
+          <div class="contact__wechat-card">
+            <div class="contact__wechat-qr" aria-label="WeChat QR code">
+              <span data-lang="en">QR&nbsp;code<br>coming&nbsp;soon</span>
+              <span data-lang="zh">二维码<br>稍后上传</span>
+            </div>
+            <div class="contact__wechat-info">
+              <span class="contact__wechat-name">Paul Barroux</span>
+              <span class="contact__wechat-id">wxid_ddw1kou7jqh212</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -127,7 +204,10 @@
   <!-- ========== FOOTER ========== -->
   <footer class="footer">
     <div class="container">
-      <p class="footer__copy">&copy; 2026 Paul Barroux &mdash; All rights reserved.</p>
+      <p class="footer__copy">
+        <span data-lang="en">&copy; 2026 Paul Barroux &mdash; All rights reserved.</span>
+        <span data-lang="zh">&copy; 2026 Paul Barroux &mdash; 保留所有权利。</span>
+      </p>
     </div>
   </footer>
 

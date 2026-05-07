@@ -3,8 +3,43 @@
    Stylesheet
    ============================================ */
 
-/* --- Google Fonts --- */
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap');
+/* --- Self-hosted fonts (works inside mainland China) --- */
+/* DM Serif Display 400 — latin */
+@font-face {
+  font-family: 'DM Serif Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/DMSerifDisplay-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* DM Serif Display 400 — latin-ext (covers French diacritics, accented Polish/Czech, etc.) */
+@font-face {
+  font-family: 'DM Serif Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/DMSerifDisplay-latinExt.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* Inter (variable font, one file covers 400/500/600) — latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('../assets/fonts/Inter-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* Inter — latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('../assets/fonts/Inter-latinExt.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
 
 /* --- CSS Custom Properties --- */
 :root {
@@ -20,9 +55,9 @@
   --color-tint: #F0F3F8;
   --color-placeholder: #E2E6EE;
 
-  /* Typography */
-  --font-heading: 'DM Serif Display', Georgia, serif;
-  --font-body: 'Inter', -apple-system, sans-serif;
+  /* Typography — Chinese fallbacks added so 中文 has graceful native typography in mainland CN */
+  --font-heading: 'DM Serif Display', 'Songti SC', 'STSong', 'SimSun', Georgia, serif;
+  --font-body: 'Inter', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, sans-serif;
 
   --text-hero: 60px;
   --text-section: 40px;
@@ -170,6 +205,17 @@ button {
 }
 
 /* ============================================
+   i18n — EN / 中文 toggle
+   Wrappers use display:contents so they're invisible to layout.
+   Default (html lang="en"): show EN, hide ZH.
+   When html.lang="zh": flipped.
+   ============================================ */
+[data-lang] { display: contents; }
+[data-lang="zh"] { display: none; }
+html[lang="zh"] [data-lang="en"] { display: none; }
+html[lang="zh"] [data-lang="zh"] { display: contents; }
+
+/* ============================================
    NAVIGATION
    ============================================ */
 .navbar {
@@ -215,6 +261,38 @@ button {
   display: flex;
   align-items: center;
   gap: var(--space-lg);
+}
+
+/* Language toggle (EN / 中) */
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: var(--space-lg);
+  font-size: var(--text-label);
+  font-weight: 600;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
+
+.lang-toggle__btn {
+  padding: 4px 6px;
+  color: var(--color-text-secondary);
+  border-radius: 3px;
+  transition: color var(--duration) var(--ease), background var(--duration) var(--ease);
+}
+
+.lang-toggle__btn:hover {
+  color: var(--color-text);
+}
+
+.lang-toggle__btn.active {
+  color: var(--color-primary);
+}
+
+.lang-toggle__sep {
+  color: var(--color-divider);
+  user-select: none;
 }
 
 .navbar__link {
@@ -326,6 +404,12 @@ button {
 
 .mobile-menu__link:hover {
   color: var(--color-primary);
+}
+
+.lang-toggle--mobile {
+  margin: var(--space-md) 0 0;
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-divider);
 }
 
 /* ============================================
@@ -717,6 +801,70 @@ button {
   transform: scaleX(1);
   transform-origin: left;
   background: var(--color-primary-hover);
+}
+
+/* WeChat block in contact section */
+.contact__wechat {
+  margin-top: var(--space-section);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.contact__wechat-label {
+  font-size: var(--text-small);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.contact__wechat-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.contact__wechat-qr {
+  width: 140px;
+  height: 140px;
+  flex-shrink: 0;
+  background: var(--color-placeholder);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: var(--text-small);
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+.contact__wechat-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 4px;
+}
+
+.contact__wechat-name {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  color: var(--color-text);
+  line-height: var(--leading-heading);
+}
+
+.contact__wechat-id {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  user-select: all;
 }
 
 .footer {
@@ -1177,6 +1325,21 @@ button {
   /* Contact */
   .contact__email {
     font-size: 24px;
+  }
+
+  .contact__wechat {
+    margin-top: var(--space-xl);
+  }
+
+  .contact__wechat-card {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--space-md);
+  }
+
+  .contact__wechat-info {
+    align-items: center;
+    text-align: center;
   }
 
   /* Case study header */

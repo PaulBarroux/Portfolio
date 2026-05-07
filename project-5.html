@@ -12,22 +12,26 @@
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%232B59C3'/><text x='50%25' y='55%25' dominant-baseline='central' text-anchor='middle' fill='white' font-family='serif' font-size='20' font-weight='bold'>P</text></svg>">
 
-  <!-- Fonts & Styles -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Fonts (self-hosted) & Styles -->
+  <link rel="preload" href="assets/fonts/Inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/DMSerifDisplay-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body data-page="project">
 
   <!-- ========== NAVIGATION ========== -->
   <header class="navbar" role="banner">
     <nav class="navbar__inner" role="navigation" aria-label="Main navigation">
       <a href="index.html" class="navbar__logo">Paul Barroux</a>
       <div class="navbar__links">
-        <a href="index.html#projects" class="navbar__link">Projects</a>
-        <a href="about.html" class="navbar__link">About</a>
-        <a href="#contact" class="navbar__link">Contact</a>
+        <a href="index.html#projects" class="navbar__link"><span data-lang="en">Projects</span><span data-lang="zh">项目</span></a>
+        <a href="about.html" class="navbar__link"><span data-lang="en">About</span><span data-lang="zh">关于</span></a>
+        <a href="#contact" class="navbar__link"><span data-lang="en">Contact</span><span data-lang="zh">联系</span></a>
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button class="lang-toggle__btn active" data-set-lang="en" type="button" aria-label="English">EN</button>
+          <span class="lang-toggle__sep" aria-hidden="true">/</span>
+          <button class="lang-toggle__btn" data-set-lang="zh" type="button" aria-label="中文">中</button>
+        </div>
       </div>
       <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span class="hamburger__line"></span>
@@ -40,9 +44,14 @@
   <!-- Mobile menu -->
   <div class="mobile-menu__overlay" aria-hidden="true"></div>
   <div class="mobile-menu" aria-hidden="true">
-    <a href="index.html#projects" class="mobile-menu__link">Projects</a>
-    <a href="about.html" class="mobile-menu__link">About</a>
-    <a href="#contact" class="mobile-menu__link">Contact</a>
+    <a href="index.html#projects" class="mobile-menu__link"><span data-lang="en">Projects</span><span data-lang="zh">项目</span></a>
+    <a href="about.html" class="mobile-menu__link"><span data-lang="en">About</span><span data-lang="zh">关于</span></a>
+    <a href="#contact" class="mobile-menu__link"><span data-lang="en">Contact</span><span data-lang="zh">联系</span></a>
+    <div class="lang-toggle lang-toggle--mobile" role="group" aria-label="Language">
+      <button class="lang-toggle__btn active" data-set-lang="en" type="button">EN</button>
+      <span class="lang-toggle__sep" aria-hidden="true">/</span>
+      <button class="lang-toggle__btn" data-set-lang="zh" type="button">中</button>
+    </div>
   </div>
 
   <main>
@@ -53,10 +62,19 @@
         <div class="case-header__inner">
           <div class="case-header__spacer"></div>
           <div class="case-header__content reveal">
-            <p class="case-header__breadcrumb">Case Studies / Project Epsilon</p>
+            <p class="case-header__breadcrumb">
+              <span data-lang="en">Case Studies / Project Epsilon</span>
+              <span data-lang="zh">案例研究 / Project Epsilon</span>
+            </p>
             <h1 class="case-header__title">Project Epsilon</h1>
-            <p class="case-header__desc">Rethinking the patient journey in a healthcare context to reduce friction, improve communication, and humanize the experience.</p>
-            <p class="case-header__meta">2024 &bull; Personal Project</p>
+            <p class="case-header__desc">
+              <span data-lang="en">Rethinking the patient journey in a healthcare context to reduce friction, improve communication, and humanize the experience.</span>
+              <span data-lang="zh">重新思考医疗场景中的患者旅程，降低摩擦、改善沟通、让体验更具人情味。</span>
+            </p>
+            <p class="case-header__meta">
+              <span data-lang="en">2024 &bull; Personal Project</span>
+              <span data-lang="zh">2024 &bull; 个人项目</span>
+            </p>
           </div>
         </div>
       </div>
@@ -65,9 +83,9 @@
     <!-- Tags -->
     <div class="container">
       <div class="case-tags reveal">
-        <span class="tag">Service Design</span>
-        <span class="tag">Healthcare</span>
-        <span class="tag">UX Research</span>
+        <span class="tag"><span data-lang="en">Service Design</span><span data-lang="zh">服务设计</span></span>
+        <span class="tag"><span data-lang="en">Healthcare</span><span data-lang="zh">医疗</span></span>
+        <span class="tag"><span data-lang="en">UX Research</span><span data-lang="zh">UX 研究</span></span>
       </div>
     </div>
 
@@ -78,8 +96,8 @@
         <div class="case-block__grid">
           <div class="case-block__image">Context Image</div>
           <div class="case-block__content">
-            <h2 class="case-block__title">Context</h2>
-            <p class="case-block__subtitle">Background and industry context</p>
+            <h2 class="case-block__title"><span data-lang="en">Context</span><span data-lang="zh">项目背景</span></h2>
+            <p class="case-block__subtitle"><span data-lang="en">Background and industry context</span><span data-lang="zh">背景与行业概况</span></p>
             <p class="case-block__text">Placeholder: Describe the project background, the company or organization involved, and the initial situation.</p>
           </div>
         </div>
@@ -89,8 +107,8 @@
         <div class="case-block__grid">
           <div class="case-block__image">Problem Image</div>
           <div class="case-block__content">
-            <h2 class="case-block__title">Problem Statement</h2>
-            <p class="case-block__subtitle">Core challenges identified</p>
+            <h2 class="case-block__title"><span data-lang="en">Problem Statement</span><span data-lang="zh">问题陈述</span></h2>
+            <p class="case-block__subtitle"><span data-lang="en">Core challenges identified</span><span data-lang="zh">已识别的核心挑战</span></p>
             <p class="case-block__text">Placeholder: What specific problem or challenge needed to be addressed? What pain points were identified?</p>
           </div>
         </div>
@@ -100,8 +118,8 @@
         <div class="case-block__grid">
           <div class="case-block__image">Stakes Image</div>
           <div class="case-block__content">
-            <h2 class="case-block__title">Stakes &amp; Challenges</h2>
-            <p class="case-block__subtitle">Key challenges and constraints</p>
+            <h2 class="case-block__title"><span data-lang="en">Stakes &amp; Challenges</span><span data-lang="zh">关键利益与挑战</span></h2>
+            <p class="case-block__subtitle"><span data-lang="en">Key challenges and constraints</span><span data-lang="zh">关键挑战与约束</span></p>
             <p class="case-block__text">Placeholder: What were the key stakes? Business constraints, user needs, technical limitations, deadlines?</p>
           </div>
         </div>
@@ -111,8 +129,8 @@
         <div class="case-block__grid">
           <div class="case-block__image">Principles Image</div>
           <div class="case-block__content">
-            <h2 class="case-block__title">Guiding Principles</h2>
-            <p class="case-block__subtitle">Strategic direction and values</p>
+            <h2 class="case-block__title"><span data-lang="en">Guiding Principles</span><span data-lang="zh">指导原则</span></h2>
+            <p class="case-block__subtitle"><span data-lang="en">Strategic direction and values</span><span data-lang="zh">战略方向与价值观</span></p>
             <p class="case-block__text">Placeholder: What design principles or strategic directions guided the project? What values informed the approach?</p>
           </div>
         </div>
@@ -122,16 +140,16 @@
         <div class="case-block__grid">
           <div class="case-block__image">Process Image</div>
           <div class="case-block__content">
-            <h2 class="case-block__title">Methodology</h2>
-            <p class="case-block__subtitle">Research, ideation, and iteration</p>
+            <h2 class="case-block__title"><span data-lang="en">Methodology</span><span data-lang="zh">方法论</span></h2>
+            <p class="case-block__subtitle"><span data-lang="en">Research, ideation, and iteration</span><span data-lang="zh">研究、构思与迭代</span></p>
             <p class="case-block__text">Placeholder: What process did you follow? Describe research methods, ideation, wireframing, testing, iteration cycles.</p>
           </div>
         </div>
       </div>
 
       <div class="case-solution container reveal">
-        <h2 class="case-solution__title">Proposed Solution</h2>
-        <p class="case-solution__subtitle">Final design and key deliverables</p>
+        <h2 class="case-solution__title"><span data-lang="en">Proposed Solution</span><span data-lang="zh">解决方案</span></h2>
+        <p class="case-solution__subtitle"><span data-lang="en">Final design and key deliverables</span><span data-lang="zh">最终设计与核心成果</span></p>
         <div class="case-solution__gallery">
           <div class="case-solution__image">Mockup 1</div>
           <div class="case-solution__image">Mockup 2</div>
@@ -141,7 +159,7 @@
       </div>
 
       <div class="case-learnings container reveal">
-        <h2 class="case-learnings__title">Key Learnings</h2>
+        <h2 class="case-learnings__title"><span data-lang="en">Key Learnings</span><span data-lang="zh">关键收获</span></h2>
         <p class="case-learnings__text">Placeholder: What did you learn from this project? What would you do differently? How did it shape your growth as a designer?</p>
       </div>
 
@@ -152,11 +170,11 @@
       <nav class="project-nav">
         <a href="project-4.html" class="project-nav__link project-nav__link--back">
           <span class="project-nav__arrow">&larr;</span>
-          Previous Project
+          <span data-lang="en">Previous Project</span><span data-lang="zh">上一个项目</span>
         </a>
         <a href="project-1.html" class="project-nav__link project-nav__link--next">
           <div>
-            <span>Next Project</span>
+            <span><span data-lang="en">Next Project</span><span data-lang="zh">下一个项目</span></span>
             <span class="project-nav__name">Project Alpha</span>
           </div>
           <span class="project-nav__arrow">&rarr;</span>
@@ -167,9 +185,32 @@
     <!-- ========== CONTACT ========== -->
     <section class="contact" id="contact">
       <div class="container">
-        <h2 class="section-title reveal">Get in Touch</h2>
-        <p class="contact__text reveal" data-delay="100">Interested in working together? Let's talk.</p>
+        <h2 class="section-title reveal">
+          <span data-lang="en">Get in Touch</span>
+          <span data-lang="zh">联系我</span>
+        </h2>
+        <p class="contact__text reveal" data-delay="100">
+          <span data-lang="en">Interested in working together? Let's talk.</span>
+          <span data-lang="zh">想合作？欢迎联系。</span>
+        </p>
         <a href="mailto:hello@paulbarroux.com" class="contact__email reveal" data-delay="200">hello@paulbarroux.com</a>
+
+        <div class="contact__wechat reveal" data-delay="300">
+          <p class="contact__wechat-label">
+            <span data-lang="en">or find me on WeChat</span>
+            <span data-lang="zh">或在微信添加我</span>
+          </p>
+          <div class="contact__wechat-card">
+            <div class="contact__wechat-qr" aria-label="WeChat QR code">
+              <span data-lang="en">QR&nbsp;code<br>coming&nbsp;soon</span>
+              <span data-lang="zh">二维码<br>稍后上传</span>
+            </div>
+            <div class="contact__wechat-info">
+              <span class="contact__wechat-name">Paul Barroux</span>
+              <span class="contact__wechat-id">wxid_ddw1kou7jqh212</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -178,7 +219,10 @@
   <!-- ========== FOOTER ========== -->
   <footer class="footer">
     <div class="container">
-      <p class="footer__copy">&copy; 2026 Paul Barroux &mdash; All rights reserved.</p>
+      <p class="footer__copy">
+        <span data-lang="en">&copy; 2026 Paul Barroux &mdash; All rights reserved.</span>
+        <span data-lang="zh">&copy; 2026 Paul Barroux &mdash; 保留所有权利。</span>
+      </p>
     </div>
   </footer>
 
