@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WePlan — A mobile app and design system for planning collaborative trips.">
+  <meta property="og:title" content="WePlan — Paul Barroux">
+  <meta property="og:description" content="A mobile app and design system for planning collaborative trips — from research to component delivery.">
+  <meta property="og:type" content="website">
+  <title>WePlan — Paul Barroux</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%232B59C3'/><text x='50%25' y='55%25' dominant-baseline='central' text-anchor='middle' fill='white' font-family='serif' font-size='20' font-weight='bold'>P</text></svg>">
+
+  <!-- Fonts (self-hosted) & Styles -->
+  <link rel="preload" href="assets/fonts/Inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/DMSerifDisplay-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="project">
+
+  <!-- ========== NAVIGATION ========== -->
+  <header class="navbar" role="banner">
+    <nav class="navbar__inner" role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="navbar__logo">Paul Barroux</a>
+      <div class="navbar__links">
+        <a href="index.html#projects" class="navbar__link"><span data-lang="en">Projects</span><span data-lang="zh">项目</span></a>
+        <a href="about.html" class="navbar__link"><span data-lang="en">About</span><span data-lang="zh">关于</span></a>
+        <a href="#contact" class="navbar__link"><span data-lang="en">Contact</span><span data-lang="zh">联系</span></a>
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button class="lang-toggle__btn active" data-set-lang="en" type="button" aria-label="English">EN</button>
+          <span class="lang-toggle__sep" aria-hidden="true">/</span>
+          <button class="lang-toggle__btn" data-set-lang="zh" type="button" aria-label="中文">中</button>
+        </div>
+      </div>
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu__overlay" aria-hidden="true"></div>
+  <div class="mobile-menu" aria-hidden="true">
+    <a href="index.html#projects" class="mobile-menu__link"><span data-lang="en">Projects</span><span data-lang="zh">项目</span></a>
+    <a href="about.html" class="mobile-menu__link"><span data-lang="en">About</span><span data-lang="zh">关于</span></a>
+    <a href="#contact" class="mobile-menu__link"><span data-lang="en">Contact</span><span data-lang="zh">联系</span></a>
+    <div class="lang-toggle lang-toggle--mobile" role="group" aria-label="Language">
+      <button class="lang-toggle__btn active" data-set-lang="en" type="button">EN</button>
+      <span class="lang-toggle__sep" aria-hidden="true">/</span>
+      <button class="lang-toggle__btn" data-set-lang="zh" type="button">中</button>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ========== HEADER ========== -->
+    <section class="case-header">
+      <div class="container">
+        <div class="case-header__inner">
+          <div class="case-header__spacer"></div>
+          <div class="case-header__content reveal">
+            <p class="case-header__breadcrumb">
+              <span data-lang="en">Case Studies / WePlan</span>
+              <span data-lang="zh">案例研究 / WePlan</span>
+            </p>
+            <h1 class="case-header__title">WePlan</h1>
+            <p class="case-header__desc">
+              <span data-lang="en">A mobile app and design system for planning collaborative trips — from research to component delivery.</span>
+              <span data-lang="zh">一款面向协作旅行规划的移动应用与设计系统——从调研到组件交付的完整流程。</span>
+            </p>
+            <p class="case-header__meta">
+              <span data-lang="en">2024 &bull; Group project &bull; Travel &frasl; Social &bull; Mobile App</span>
+              <span data-lang="zh">2024 &bull; 团队项目 &bull; 旅行 / 社交 &bull; 移动应用</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tags -->
+    <div class="container">
+      <div class="case-tags reveal">
+        <span class="tag"><span data-lang="en">Product Design</span><span data-lang="zh">产品设计</span></span>
+        <span class="tag"><span data-lang="en">Mobile App</span><span data-lang="zh">移动应用</span></span>
+        <span class="tag"><span data-lang="en">Design System</span><span data-lang="zh">设计系统</span></span>
+        <span class="tag"><span data-lang="en">UX Research</span><span data-lang="zh">UX 研究</span></span>
+      </div>
+    </div>
+
+    <!-- ========== CASE STUDY CONTENT ========== -->
+    <article>
+
+      <!-- ── 01 CONTEXT ── -->
+      <div class="case-block container reveal">
+        <div class="case-block__grid">
+          <div class="case-block__image">
+            <!-- Multi-screen composite: WePlan app across home, trip, and activities screens in a 3-phone layout -->
+          </div>
+          <div class="case-block__content">
+            <h2 class="case-block__title">
+              <span data-lang="en">Building a collaborative travel app and its design system</span>
+              <span data-lang="zh">构建一款协作旅行应用及其设计系统</span>
+            </h2>
+            <p class="case-block__subtitle">
+              <span data-lang="en">A dual deliverable: product and system</span>
+              <span data-lang="zh">双重交付物：产品与系统</span>
+            </p>
+            <p class="case-block__text">
+              <span data-lang="en">WePlan is a mobile application concept designed to help groups of friends plan trips together — centralizing planning, decisions, and communication in one place.</span>
+              <span data-lang="zh">WePlan 是一款移动应用概念，旨在帮助朋友群体共同规划旅行——将计划制定、集体决策与沟通协调整合在同一平台。</span>
+            </p>
+            <p class="case-block__text">
+              <span data-lang="en">The project had a dual focus: designing the product experience itself, and building a rigorous design system from scratch that could support it. Both are first-class deliverables — the app and the system that makes it scalable.</span>
+              <span data-lang="zh">项目有两条并行主线：设计产品体验本身，以及从零构建一套严谨的设计系统为其提供支撑。两者都是核心交付物——应用本身，以及让其可规模化扩展的系统框架。</span>
+            </p>
+            <p class="case-block__text">
+              <span data-lang="en"><strong>Roles:</strong> Product Design &middot; UX Research &middot; UI Design &middot; Design System<br>
+              <strong>Tools:</strong> Figma &middot; FigJam &middot; Notion</span>
+              <span data-lang="zh"><strong>角色：</strong>产品设计 &middot; UX 研究 &middot; UI 设计 &middot; 设计系统<br>
+              <strong>工具：</strong>Figma &middot; FigJam &middot; Notion</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 02 PROBLEM STATEMENT — 4 cards ── -->
+      <div class="case-problem container reveal">
+        <div class="case-problem__header">
+          <h2 class="case-problem__title">
+            <span data-lang="en">How do you organize a group trip without losing everyone in the process?</span>
+            <span data-lang="zh">如何组织一次群体旅行，而不让所有人在过程中精疲力竭？</span>
+          </h2>
+          <p class="case-problem__subtitle">
+            <span data-lang="en">Planning a trip as a group means juggling WhatsApp, Google Docs, Airbnb, Tripadvisor — decisions get lost, things get forgotten, and collective enthusiasm fades under the friction.</span>
+            <span data-lang="zh">以群体方式规划旅行，意味着同时游走于 WhatsApp、Google Docs、Airbnb、Tripadvisor 之间——决策在其中迷失，事项不断被遗忘，集体热情在重重摩擦中逐渐消退。</span>
+          </p>
+        </div>
+        <div class="case-problem__grid">
+
+          <div class="case-problem__card">
+            <p class="case-problem__card-num">
+              <span data-lang="en">Problem 01</span>
+              <span data-lang="zh">问题01</span>
+            </p>
+            <h3 class="case-problem__card-category">
+              <span data-lang="en">Too many scattered tools</span>
+              <span data-lang="zh">工具过于分散</span>
+            </h3>
+            <p class="case-problem__card-text">
+              <span data-lang="en">Information is spread across multiple apps with no coherence or shared source of truth.</span>
+              <span data-lang="zh">信息分散在多个应用之间，缺乏统一的信息来源与内在连贯性。</span>
+            </p>
+          </div>
+
+          <div class="case-problem__card">
+            <p class="case-problem__card-num">
+              <span data-lang="en">Problem 02</span>
+              <span data-lang="zh">问题02</span>
+            </p>
+            <h3 class="case-problem__card-category">
+              <span data-lang="en">Hard to decide as a group</span>
+              <span data-lang="zh">群体决策困难</span>
+            </h3>
+            <p class="case-problem__card-text">
+              <span data-lang="en">Without a dedicated tool, reconciling everyone's opinions generates conflict and confusion.</span>
+              <span data-lang="zh">缺乏专属工具时，协调所有人的意见往往引发争议与混乱。</span>
+            </p>
+          </div>
+
+          <div class="case-problem__card">
+            <p class="case-problem__card-num">
+              <span data-lang="en">Problem 03</span>
+              <span data-lang="zh">问题03</span>
+            </p>
+            <h3 class="case-problem__card-category">
+              <span data-lang="en">Frequent oversights</span>
+              <span data-lang="zh">细节频繁遗漏</span>
+            </h3>
+            <p class="case-problem__card-text">
+              <span data-lang="en">Without centralization, important details disappear into message threads and are never acted on.</span>
+              <span data-lang="zh">缺乏集中管理，重要细节消失在消息流中，无人跟进落实。</span>
+            </p>
+          </div>
+
+          <div class="case-problem__card">
+            <p class="case-problem__card-num">
+              <span data-lang="en">Problem 04</span>
+              <span data-lang="zh">问题04</span>
+            </p>
+            <h3 class="case-problem__card-category">
+              <span data-lang="en">Unmanageable group chats</span>
+              <span data-lang="zh">群聊难以管理</span>
+            </h3>
+            <p class="case-problem__card-text">
+              <span data-lang="en">The primary communication channel becomes unreadable and inefficient almost immediately.</span>
+              <span data-lang="zh">主要的沟通渠道几乎立刻变得混乱不堪、效率低下。</span>
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── 03 TARGET AUDIENCE ── -->
+      <div class="case-block case-block--reversed container reveal">
+        <div class="case-block__grid">
+          <div class="case-block__image">
+            <!-- Persona illustration or photo: a group of young friends looking at a map or phone together -->
+          </div>
+          <div class="case-block__content">
+            <h2 class="case-block__title">
+              <span data-lang="en">Designed for groups of friends</span>
+              <span data-lang="zh">为朋友群体而设计</span>
+            </h2>
+            <p class="case-block__subtitle">
+              <span data-lang="en">Young urban travelers planning together</span>
+              <span data-lang="zh">共同规划旅行的城市年轻人</span>
+            </p>
+
+            <p class="case-list-label">
+              <span data-lang="en">Needs</span>
+              <span data-lang="zh">需求</span>
+            </p>
+            <ul class="case-list">
+              <li class="case-list__item">
+                <span data-lang="en">Plan a weekend or vacation quickly, without switching between apps</span>
+                <span data-lang="zh">快速规划周末出行或假期，无需在多个应用之间来回切换</span>
+              </li>
+              <li class="case-list__item">
+                <span data-lang="en">Make collective decisions without friction or endless debate</span>
+                <span data-lang="zh">无障碍地完成集体决策，避免无休止的争论</span>
+              </li>
+              <li class="case-list__item">
+                <span data-lang="en">Share all trip information in one centralized place</span>
+                <span data-lang="zh">将所有旅行信息集中在同一个地方共享</span>
+              </li>
+              <li class="case-list__item">
+                <span data-lang="en">Get inspired by and copy publicly shared trips from the community</span>
+                <span data-lang="zh">从社区公开分享的行程中获取灵感，并可一键复制使用</span>
+              </li>
+            </ul>
+
+            <p class="case-list-label">
+              <span data-lang="en">Frustrations</span>
+              <span data-lang="zh">痛点</span>
+            </p>
+            <ul class="case-list">
+              <li class="case-list__item">
+                <span data-lang="en">Conversations scattered across different apps with no clear thread</span>
+                <span data-lang="zh">沟通分散在不同应用中，缺乏清晰的信息主线</span>
+              </li>
+              <li class="case-list__item">
+                <span data-lang="en">Difficulty aligning everyone's schedules and preferences</span>
+                <span data-lang="zh">难以协调所有人的时间安排与偏好</span>
+              </li>
+              <li class="case-list__item">
+                <span data-lang="en">Conflicts or confusion over shared decisions and responsibilities</span>
+                <span data-lang="zh">在共同决策和分工上产生冲突或混乱</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 04 VISUAL IDENTITY ── -->
+      <div class="case-identity container reveal">
+        <div class="case-identity__header">
+          <h2 class="case-identity__title">
+            <span data-lang="en">Warm, reassuring colors built for togetherness</span>
+            <span data-lang="zh">温暖、令人安心的配色，为共同出行而生</span>
+          </h2>
+          <p class="case-identity__subtitle">
+            <span data-lang="en">A palette and type system designed to feel inclusive, clear, and welcoming</span>
+            <span data-lang="zh">一套令人感到包容、清晰、亲切的色彩与字体体系</span>
+          </p>
+        </div>
+
+        <div class="case-identity__grid">
+
+          <!-- Colors -->
+          <div>
+            <p class="case-identity__col-label">
+              <span data-lang="en">Color Palette</span>
+              <span data-lang="zh">色彩体系</span>
+            </p>
+            <h3 class="case-identity__col-title">
+              <span data-lang="en">Three colors, one warmth</span>
+              <span data-lang="zh">三种颜色，同一份温度</span>
+            </h3>
+            <p class="case-identity__col-text">
+              <span data-lang="en">The palette communicates warmth and conviviality — amber as the anchor, yellow as the invitation, and a soft off-white for breathing room.</span>
+              <span data-lang="zh">配色传递温暖与欢聚感——深琥珀色作为锚点，暖黄色作为邀请，柔和的米白色留出呼吸空间。</span>
+            </p>
+            <div class="case-swatches">
+              <div class="case-swatch">
+                <div class="case-swatch__color" style="background:#AD7100;" aria-label="Deep amber #AD7100"></div>
+                <div>
+                  <span class="case-swatch__label">
+                    <span data-lang="en">Cohesion &amp; Warmth</span>
+                    <span data-lang="zh">凝聚 &amp; 温暖</span>
+                  </span>
+                  <span class="case-swatch__hex">#AD7100</span>
+                </div>
+              </div>
+              <div class="case-swatch">
+                <div class="case-swatch__color" style="background:#FFCA66;" aria-label="Warm yellow #FFCA66"></div>
+                <div>
+                  <span class="case-swatch__label">
+                    <span data-lang="en">Conviviality</span>
+                    <span data-lang="zh">欢聚感</span>
+                  </span>
+                  <span class="case-swatch__hex">#FFCA66</span>
+                </div>
+              </div>
+              <div class="case-swatch">
+                <div class="case-swatch__color" style="background:#EDEFF8; border-color: rgba(0,0,0,0.1);" aria-label="Soft off-white #EDEFF8"></div>
+                <div>
+                  <span class="case-swatch__label">
+                    <span data-lang="en">Clarity</span>
+                    <span data-lang="zh">清晰感</span>
+                  </span>
+                  <span class="case-swatch__hex">#EDEFF8</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Typography -->
+          <div>
+            <p class="case-identity__col-label">
+              <span data-lang="en">Typography</span>
+              <span data-lang="zh">字体排版</span>
+            </p>
+            <h3 class="case-identity__col-title">Helvetica Neue</h3>
+            <p class="case-identity__col-text">
+              <span data-lang="en">It conveys clarity, reliability, and simplicity — modern and accessible to all users.</span>
+              <span data-lang="zh">传递清晰、可靠与简洁的气质——现代且对所有用户友好。</span>
+            </p>
+            <div class="case-typescale">
+              <div class="case-typescale__row case-typescale__row--header">
+                <span><span data-lang="en">Style</span><span data-lang="zh">样式</span></span>
+                <span><span data-lang="en">Size</span><span data-lang="zh">字号</span></span>
+                <span><span data-lang="en">Weight</span><span data-lang="zh">字重</span></span>
+              </div>
+              <div class="case-typescale__row">
+                <span class="case-typescale__sample" style="font-size:20px;font-weight:700;"><span data-lang="en">Title</span><span data-lang="zh">标题</span></span>
+                <span class="case-typescale__meta">20px</span>
+                <span class="case-typescale__meta"><span data-lang="en">Bold</span><span data-lang="zh">粗体</span></span>
+              </div>
+              <div class="case-typescale__row">
+                <span class="case-typescale__sample" style="font-size:16px;font-weight:500;"><span data-lang="en">Subtitle</span><span data-lang="zh">副标题</span></span>
+                <span class="case-typescale__meta">16px</span>
+                <span class="case-typescale__meta"><span data-lang="en">Medium</span><span data-lang="zh">中等</span></span>
+              </div>
+              <div class="case-typescale__row">
+                <span class="case-typescale__sample" style="font-size:14px;font-weight:400;"><span data-lang="en">Body</span><span data-lang="zh">正文</span></span>
+                <span class="case-typescale__meta">14px</span>
+                <span class="case-typescale__meta"><span data-lang="en">Regular</span><span data-lang="zh">常规</span></span>
+              </div>
+              <div class="case-typescale__row">
+                <span class="case-typescale__sample" style="font-size:12px;font-weight:400;"><span data-lang="en">Small body</span><span data-lang="zh">小正文</span></span>
+                <span class="case-typescale__meta">12px</span>
+                <span class="case-typescale__meta"><span data-lang="en">Regular</span><span data-lang="zh">常规</span></span>
+              </div>
+            </div>
+            <p class="case-typescale__weights">
+              <span data-lang="en">Weights: Regular (400) &middot; Medium (500) &middot; Bold (700) + italic variants</span>
+              <span data-lang="zh">字重：Regular (400) &middot; Medium (500) &middot; Bold (700) + 斜体变体</span>
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── 05 DESIGN CHOICES ── -->
+      <div class="case-choices reveal">
+        <div class="container">
+          <div class="case-choices__header">
+            <h2 class="case-choices__title">
+              <span data-lang="en">Design decisions for a seamless group experience</span>
+              <span data-lang="zh">为无缝群体体验而做的设计决策</span>
+            </h2>
+            <p class="case-choices__subtitle">
+              <span data-lang="en">Six principles that shaped the interface</span>
+              <span data-lang="zh">塑造界面的六项设计原则</span>
+            </p>
+          </div>
+          <div class="case-choices__grid">
+
+            <div class="case-choices__card">
+              <h3 class="case-choices__card-title">
+                <span data-lang="en">Bottom Sheets</span>
+                <span data-lang="zh">底部弹出层</span>
+              </h3>
+              <p class="case-choices__card-text">
+                <span data-lang="en">Contextual panels keep the user in their current flow without navigation breaks.</span>
+                <span data-lang="zh">上下文面板让用户保持在当前操作流中，无需跳转页面。</span>
+              </p>
+            </div>
+
+            <div class="case-choices__card">
+              <h3 class="case-choices__card-title">
+                <span data-lang="en">Community Trips</span>
+                <span data-lang="zh">社区行程</span>
+              </h3>
+              <p class="case-choices__card-text">
+                <span data-lang="en">Users can browse and copy trips or activities shared by the community for inspiration.</span>
+                <span data-lang="zh">用户可浏览并复制社区分享的行程或活动，获取旅行灵感。</span>
+              </p>
+            </div>
+
+            <div class="case-choices__card">
+              <h3 class="case-choices__card-title">
+                <span data-lang="en">Friend Collaboration</span>
+                <span data-lang="zh">好友协作</span>
+              </h3>
+              <p class="case-choices__card-text">
+                <span data-lang="en">An invitation and co-editing system built for collective decision-making.</span>
+                <span data-lang="zh">专为集体决策设计的邀请与协同编辑系统。</span>
+              </p>
+            </div>
+
+            <div class="case-choices__card">
+              <h3 class="case-choices__card-title">
+                <span data-lang="en">Information Hierarchy</span>
+                <span data-lang="zh">信息层级</span>
+              </h3>
+              <p class="case-choices__card-text">
+                <span data-lang="en">A clear visual structure so every group member can quickly find what they need.</span>
+                <span data-lang="zh">清晰的视觉层级结构，让每位成员都能快速找到所需信息。</span>
+              </p>
+            </div>
+
+            <div class="case-choices__card">
+              <h3 class="case-choices__card-title">
+                <span data-lang="en">Poll Results</span>
+                <span data-lang="zh">投票结果</span>
+              </h3>
+              <p class="case-choices__card-text">
+                <span data-lang="en">Real-time vote visualization to help the group reach decisions faster.</span>
+                <span data-lang="zh">实时投票可视化，帮助群体更快达成共识。</span>
+              </p>
+            </div>
+
+            <div class="case-choices__card">
+              <h3 class="case-choices__card-title">
+                <span data-lang="en">Rounded Elements</span>
+                <span data-lang="zh">圆角元素</span>
+              </h3>
+              <p class="case-choices__card-text">
+                <span data-lang="en">Soft shapes that reinforce the warmth and friendliness of the application.</span>
+                <span data-lang="zh">柔和的圆角形态，强化应用温暖亲切的整体气质。</span>
+              </p>
+            </div>
+
+          </div>
+          <div class="case-choices__image">
+            <!-- Design choices overview: multiple WePlan screens side by side showing bottom sheet, poll, and community feed -->
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 06 FEATURES ── -->
+      <div class="case-features reveal">
+        <div class="container">
+          <div class="case-features__header">
+            <h2 class="case-features__title">
+              <span data-lang="en">Key Features</span>
+              <span data-lang="zh">核心功能</span>
+            </h2>
+            <p class="case-features__subtitle">
+              <span data-lang="en">Four core experiences that define the WePlan app</span>
+              <span data-lang="zh">定义 WePlan 体验的四个核心功能模块</span>
+            </p>
+          </div>
+
+          <!-- Feature 01 -->
+          <div class="case-feature">
+            <p class="case-feature__num">
+              <span data-lang="en">Feature 01</span>
+              <span data-lang="zh">功能01</span>
+            </p>
+            <h3 class="case-feature__title">
+              <span data-lang="en">Get inspired and build from existing trips</span>
+              <span data-lang="zh">从现有行程中获取灵感，直接开始规划</span>
+            </h3>
+            <p class="case-feature__text">
+              <span data-lang="en">The home screen centralizes community trip suggestions alongside the user's upcoming trips. An inspiration feed is directly integrated into the planning flow.</span>
+              <span data-lang="zh">首页将社区推荐行程与用户的即将出行整合在同一屏幕。灵感浏览流直接嵌入规划流程中，发现即可行动。</span>
+            </p>
+            <div class="case-screens">
+              <div class="case-screens__item">
+                <!-- Mobile mockup: WePlan home feed — community trips + upcoming trips -->
+              </div>
+              <div class="case-screens__item">
+                <!-- Mobile mockup: Trip detail / bottom sheet with activities preview -->
+              </div>
+              <div class="case-screens__item">
+                <!-- Mobile mockup: My trips view — upcoming trip cards -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature 02 -->
+          <div class="case-feature">
+            <p class="case-feature__num">
+              <span data-lang="en">Feature 02</span>
+              <span data-lang="zh">功能02</span>
+            </p>
+            <h3 class="case-feature__title">
+              <span data-lang="en">Create a trip without friction</span>
+              <span data-lang="zh">无摩擦地创建一次旅行</span>
+            </h3>
+            <p class="case-feature__text">
+              <span data-lang="en">In three guided steps: trip information, friend invitations, planning overview. The user creates a trip and immediately brings their group onboard.</span>
+              <span data-lang="zh">三步引导流程：填写旅行信息、邀请好友、规划概览。用户创建行程的同时，立刻将整个群体纳入其中。</span>
+            </p>
+            <div class="case-screens">
+              <div class="case-screens__item">
+                <!-- Mobile mockup: Create trip form — step 1, destination + dates + trip name -->
+              </div>
+              <div class="case-screens__item">
+                <!-- Mobile mockup: Add friends — step 2, contact list with invite checkboxes -->
+              </div>
+              <div class="case-screens__item">
+                <!-- Mobile mockup: Trip planning / map view — step 3, activities map overview -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature 03 -->
+          <div class="case-feature">
+            <p class="case-feature__num">
+              <span data-lang="en">Feature 03</span>
+              <span data-lang="zh">功能03</span>
+            </p>
+            <h3 class="case-feature__title">
+              <span data-lang="en">Let the group decide together</span>
+              <span data-lang="zh">让群体共同做决定</span>
+            </h3>
+            <p class="case-feature__text">
+              <span data-lang="en">Polls are embedded directly in the trip. Any member can create one, results are visible in real time, and the group can vote and move forward collectively.</span>
+              <span data-lang="zh">投票功能直接嵌入行程中。任何成员均可发起投票，结果实时可见，群体可以一起投票并推进决策。</span>
+            </p>
+            <div class="case-screens">
+              <div class="case-screens__item">
+                <!-- Mobile mockup: Trip view with active poll card embedded in timeline -->
+              </div>
+              <div class="case-screens__item">
+                <!-- Mobile mockup: Create poll form — question + options + deadline -->
+              </div>
+              <div class="case-screens__item">
+                <!-- Mobile mockup: Poll in progress — live bar chart results with vote counts -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature 04 -->
+          <div class="case-feature">
+            <p class="case-feature__num">
+              <span data-lang="en">Feature 04</span>
+              <span data-lang="zh">功能04</span>
+            </p>
+            <h3 class="case-feature__title">
+              <span data-lang="en">Structure activities day by day</span>
+              <span data-lang="zh">按天逐日规划活动</span>
+            </h3>
+            <p class="case-feature__text">
+              <span data-lang="en">Activities are added via the community database or created custom. Each activity is organized day by day for a clear, readable planning view.</span>
+              <span data-lang="zh">活动可从社区数据库添加，也可自定义创建。所有活动按天组织，形成清晰可读的规划视图。</span>
+            </p>
+            <div class="case-screens">
+              <div class="case-screens__item">
+                <!-- Mobile mockup: Day 1 planning view — timeline of activities for the day -->
+              </div>
+              <div class="case-screens__item">
+                <!-- Mobile mockup: Add activity — search community database or create custom -->
+              </div>
+              <div class="case-screens__item">
+                <!-- Mobile mockup: Activities added to day — confirmation state with all items listed -->
+              </div>
+              <div class="case-screens__item">
+                <!-- Mobile mockup: Activity detail — full info card with location, description, duration -->
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── 07 DESIGN SYSTEM ── -->
+      <div class="case-ds reveal">
+        <div class="container">
+
+          <div class="case-ds__header">
+            <p class="case-ds__label">
+              <span data-lang="en">Section 07 &mdash; Design System</span>
+              <span data-lang="zh">第七部分 — 设计系统</span>
+            </p>
+            <h2 class="case-ds__title">
+              <span data-lang="en">A design system built to scale</span>
+              <span data-lang="zh">一个为规模化而构建的设计系统</span>
+            </h2>
+            <p class="case-ds__intro">
+              <span data-lang="en">Beyond the app itself, a structured design system was built from the ground up following Atomic Design methodology — from foundational tokens to complex organisms. Every component was designed with states, variants, and scalability in mind.</span>
+              <span data-lang="zh">在应用本身之外，我们以原子设计方法论为指导，从零构建了一套完整的设计系统——从基础令牌到复杂的有机体组件。每个组件均考虑了状态、变体与可扩展性。</span>
+            </p>
+          </div>
+
+          <div class="case-ds__blocks">
+
+            <!-- DS Block 1 — Typography -->
+            <div class="case-ds__block">
+              <p class="case-ds__block-label">
+                <span data-lang="en">Atoms</span>
+                <span data-lang="zh">原子</span>
+              </p>
+              <h3 class="case-ds__block-title">
+                <span data-lang="en">Typography tokens</span>
+                <span data-lang="zh">字体令牌</span>
+              </h3>
+              <p class="case-ds__block-text">
+                <span data-lang="en">Typographic tokens define every text style in the system, from Bold 20 title to Regular 12 small body — ensuring perfect consistency between Figma and code.</span>
+                <span data-lang="zh">字体令牌定义了系统中的每一种文字样式，从粗体20号标题到常规12号小正文——确保 Figma 与代码之间的完美一致性。</span>
+              </p>
+              <div class="case-typescale">
+                <div class="case-typescale__row case-typescale__row--header">
+                  <span><span data-lang="en">Token</span><span data-lang="zh">令牌</span></span>
+                  <span><span data-lang="en">Size</span><span data-lang="zh">字号</span></span>
+                  <span><span data-lang="en">Weight</span><span data-lang="zh">字重</span></span>
+                </div>
+                <div class="case-typescale__row">
+                  <span class="case-typescale__sample" style="font-size:20px;font-weight:700"><span data-lang="en">Title</span><span data-lang="zh">标题</span></span>
+                  <span class="case-typescale__meta">20px</span>
+                  <span class="case-typescale__meta">Bold · 700</span>
+                </div>
+                <div class="case-typescale__row">
+                  <span class="case-typescale__sample" style="font-size:16px;font-weight:500"><span data-lang="en">Subtitle</span><span data-lang="zh">副标题</span></span>
+                  <span class="case-typescale__meta">16px</span>
+                  <span class="case-typescale__meta">Medium · 500</span>
+                </div>
+                <div class="case-typescale__row">
+                  <span class="case-typescale__sample" style="font-size:14px;font-weight:400"><span data-lang="en">Body</span><span data-lang="zh">正文</span></span>
+                  <span class="case-typescale__meta">14px</span>
+                  <span class="case-typescale__meta">Regular · 400</span>
+                </div>
+                <div class="case-typescale__row">
+                  <span class="case-typescale__sample" style="font-size:12px;font-weight:400"><span data-lang="en">Small body</span><span data-lang="zh">小正文</span></span>
+                  <span class="case-typescale__meta">12px</span>
+                  <span class="case-typescale__meta">Regular · 400</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- DS Block 2 — Buttons -->
+            <div class="case-ds__block">
+              <p class="case-ds__block-label">
+                <span data-lang="en">Molecules</span>
+                <span data-lang="zh">分子</span>
+              </p>
+              <h3 class="case-ds__block-title">
+                <span data-lang="en">Button library</span>
+                <span data-lang="zh">按钮库</span>
+              </h3>
+              <p class="case-ds__block-text">
+                <span data-lang="en">A button library covering three sizes, four states (default, hover, pressed, disabled), and two icon variants: without prefix and with prefix.</span>
+                <span data-lang="zh">按钮库涵盖三种尺寸、四种状态（默认、悬停、按下、禁用），以及两种图标变体：无前缀图标与有前缀图标。</span>
+              </p>
+              <div class="case-ds__image">
+                <!-- Design system export: Button components sheet — all sizes, states, and icon variants in a Figma component overview -->
+              </div>
+            </div>
+
+            <!-- DS Block 3 — Cards -->
+            <div class="case-ds__block">
+              <p class="case-ds__block-label">
+                <span data-lang="en">Organisms</span>
+                <span data-lang="zh">有机体</span>
+              </p>
+              <h3 class="case-ds__block-title">
+                <span data-lang="en">Trip cards</span>
+                <span data-lang="zh">行程卡片</span>
+              </h3>
+              <p class="case-ds__block-text">
+                <span data-lang="en">Trip cards exist in three formats: large hero, medium list, and small thumbnail — each adapted to its display context with its own metadata (date, participants, primary action).</span>
+                <span data-lang="zh">行程卡片有三种规格：大型主角卡、中型列表卡与小型缩略图卡——每种规格根据其展示场景适配，并附带独立的元数据（日期、参与者、主操作）。</span>
+              </p>
+              <div class="case-ds__image">
+                <!-- Design system export: Card components sheet — large, medium, and small card variants with metadata and states -->
+              </div>
+            </div>
+
+            <!-- DS Block 4 — Bottom Sheets -->
+            <div class="case-ds__block">
+              <p class="case-ds__block-label">
+                <span data-lang="en">Organisms</span>
+                <span data-lang="zh">有机体</span>
+              </p>
+              <h3 class="case-ds__block-title">
+                <span data-lang="en">Bottom sheets</span>
+                <span data-lang="zh">底部弹出层</span>
+              </h3>
+              <p class="case-ds__block-text">
+                <span data-lang="en">Bottom sheets are WePlan's central interaction pattern. Four variants: activity detail, add activity, create poll, and trip overview — maintaining context while enabling deep actions.</span>
+                <span data-lang="zh">底部弹出层是 WePlan 的核心交互模式。四种变体：活动详情、添加活动、创建投票与行程概览——在保持上下文的同时，支持深层操作。</span>
+              </p>
+              <div class="case-ds__image">
+                <!-- Design system export: Bottom sheet components sheet — all 4 variants overlaid on a dimmed app background -->
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 08 KEY LEARNINGS ── -->
+      <div class="case-learnings container reveal">
+        <h2 class="case-learnings__title">
+          <span data-lang="en">Key Learnings</span>
+          <span data-lang="zh">关键收获</span>
+        </h2>
+        <p class="case-learnings__text">
+          <span data-lang="en">Placeholder: What did you learn from this project? How did building a design system alongside the product change your design thinking? What would you do differently on the system architecture? What tradeoffs did you make between polish and scope?</span>
+          <span data-lang="zh">待填写：这个项目让你学到了什么？在开发产品的同时构建设计系统，如何改变了你的设计思维？在系统架构上，你会做哪些不同的选择？你在精细度与范围之间做了哪些权衡？</span>
+        </p>
+      </div>
+
+    </article>
+
+    <!-- ========== PROJECT NAVIGATION ========== -->
+    <div class="container">
+      <nav class="project-nav">
+        <a href="cegedim.html" class="project-nav__link project-nav__link--back">
+          <span class="project-nav__arrow">&larr;</span>
+          <span data-lang="en">Previous Project</span><span data-lang="zh">上一个项目</span>
+        </a>
+        <a href="jardi.html" class="project-nav__link project-nav__link--next">
+          <div>
+            <span><span data-lang="en">Next Project</span><span data-lang="zh">下一个项目</span></span>
+            <span class="project-nav__name">Jardi</span>
+          </div>
+          <span class="project-nav__arrow">&rarr;</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- ========== CONTACT ========== -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2 class="section-title reveal">
+          <span data-lang="en">Get in Touch</span>
+          <span data-lang="zh">联系我</span>
+        </h2>
+        <p class="contact__text reveal" data-delay="100">
+          <span data-lang="en">Interested in working together? Let's talk.</span>
+          <span data-lang="zh">想合作？欢迎联系。</span>
+        </p>
+        <a href="mailto:hello@paulbarroux.com" class="contact__email reveal" data-delay="200">hello@paulbarroux.com</a>
+
+        <div class="contact__wechat reveal" data-delay="300">
+          <p class="contact__wechat-label">
+            <span data-lang="en">or find me on WeChat</span>
+            <span data-lang="zh">或在微信添加我</span>
+          </p>
+          <div class="contact__wechat-card">
+            <div class="contact__wechat-qr" aria-label="WeChat QR code">
+              <span data-lang="en">QR&nbsp;code<br>coming&nbsp;soon</span>
+              <span data-lang="zh">二维码<br>稍后上传</span>
+            </div>
+            <div class="contact__wechat-info">
+              <span class="contact__wechat-name">Paul Barroux</span>
+              <span class="contact__wechat-id">wxid_ddw1kou7jqh212</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__copy">
+        <span data-lang="en">&copy; 2026 Paul Barroux &mdash; All rights reserved.</span>
+        <span data-lang="zh">&copy; 2026 Paul Barroux &mdash; 保留所有权利。</span>
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
