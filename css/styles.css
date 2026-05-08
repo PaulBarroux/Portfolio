@@ -425,7 +425,7 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
 }
 
 .hero__left {
-  max-width: 60%;
+  max-width: 75%;
 }
 
 .hero__title {
@@ -520,21 +520,22 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
 .expertise__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0;
+  gap: var(--space-lg);
 }
 
 .expertise__column {
-  padding: 0 var(--space-lg);
-  border-right: 1px solid var(--color-divider);
+  background: var(--color-surface);
+  border: 1px solid var(--color-surface-border);
+  border-radius: 16px;
+  padding: var(--space-lg);
 }
 
 .expertise__column:first-child {
-  padding-left: 0;
+  /* card handles its own padding */
 }
 
 .expertise__column:last-child {
-  border-right: none;
-  padding-right: 0;
+  /* card handles its own border */
 }
 
 .expertise__column-title {
@@ -761,14 +762,18 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
    CONTACT / FOOTER
    ============================================ */
 .contact {
-  padding: var(--space-section) 0 var(--space-xl);
+  padding: var(--space-xl) 0 var(--space-lg);
   text-align: center;
+}
+
+.contact .section-title {
+  margin-bottom: var(--space-md);
 }
 
 .contact__text {
   font-size: var(--text-subtitle);
   color: var(--color-text-secondary);
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
 }
 
 .contact__email {
@@ -805,7 +810,7 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
 
 /* WeChat block in contact section */
 .contact__wechat {
-  margin-top: var(--space-section);
+  margin-top: var(--space-xl);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2423,6 +2428,33 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
   font-weight: 500;
 }
 
+/* ============================================
+   APPROACH SECTION (Homepage)
+   ============================================ */
+.approach {
+  padding: var(--space-section) 0;
+  background: var(--color-tint);
+}
+
+.approach__header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.approach__header .section-label {
+  display: inline-block;
+  margin-bottom: var(--space-sm);
+}
+
+.approach__tagline {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  line-height: var(--leading-heading);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-xs);
+  font-style: italic;
+}
+
 /* Project navigation at bottom */
 .project-nav {
   padding: var(--space-lg) 0;
@@ -2502,19 +2534,8 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
     gap: var(--space-lg);
   }
 
-  .expertise__column {
-    padding: 0;
-    border-right: none;
-  }
-
-  .expertise__column:nth-child(2) {
-    border-right: none;
-  }
-
   .expertise__column:last-child {
     grid-column: 1 / -1;
-    border-top: 1px solid var(--color-divider);
-    padding-top: var(--space-lg);
   }
 
   .projects__layout {
@@ -2545,6 +2566,10 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
   .case-benchmark__cards {
     grid-template-columns: 1fr;
     gap: var(--space-md);
+  }
+
+  .approach__tagline {
+    font-size: 19px;
   }
 
   .case-benchmark__cards--three {
@@ -2681,18 +2706,8 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
     gap: var(--space-lg);
   }
 
-  .expertise__column {
-    padding: 0;
-    border-right: none;
-  }
-
   .expertise__column:last-child {
     grid-column: auto;
-  }
-
-  .expertise__column:not(:last-child) {
-    padding-bottom: var(--space-lg);
-    border-bottom: 1px solid var(--color-divider);
   }
 
   /* Hero */
@@ -2742,6 +2757,15 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
   .contact__wechat-info {
     align-items: center;
     text-align: center;
+  }
+
+  /* Approach section */
+  .approach {
+    padding: var(--space-xl) 0;
+  }
+
+  .approach__tagline {
+    font-size: 17px;
   }
 
   /* Case study header */

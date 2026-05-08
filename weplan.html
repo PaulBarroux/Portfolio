@@ -462,7 +462,132 @@
         </div>
       </div>
 
-      <!-- ── 06 FEATURES ── -->
+      <!-- ── 06 DESIGN SYSTEM ── -->
+      <div class="case-ds reveal">
+        <div class="container">
+
+          <div class="case-ds__header">
+            <p class="case-ds__label">
+              <span data-lang="en">Design System</span>
+              <span data-lang="zh">设计系统</span>
+            </p>
+            <h2 class="case-ds__title">
+              <span data-lang="en">A design system built to scale</span>
+              <span data-lang="zh">一个为规模化而构建的设计系统</span>
+            </h2>
+            <p class="case-ds__intro">
+              <span data-lang="en">Beyond the app itself, a structured design system was built from the ground up following Atomic Design methodology, from foundational tokens to complex organisms. Every component was designed with states, variants, and scalability in mind.</span>
+              <span data-lang="zh">在应用本身之外，我们以原子设计方法论为指导，从零构建了一套完整的设计系统——从基础令牌到复杂的有机体组件。每个组件均考虑了状态、变体与可扩展性。</span>
+            </p>
+          </div>
+
+          <div class="case-ds__blocks">
+
+            <!-- DS Block 1 — Typography -->
+            <div class="case-ds__block">
+              <p class="case-ds__block-label">
+                <span data-lang="en">Atoms</span>
+                <span data-lang="zh">原子</span>
+              </p>
+              <h3 class="case-ds__block-title">
+                <span data-lang="en">Typography tokens</span>
+                <span data-lang="zh">字体令牌</span>
+              </h3>
+              <p class="case-ds__block-text">
+                <span data-lang="en">Typographic tokens define every text style in the system, from Bold 20 title to Regular 12 small body, ensuring perfect consistency between Figma and code.</span>
+                <span data-lang="zh">字体令牌定义了系统中的每一种文字样式，从粗体20号标题到常规12号小正文——确保 Figma 与代码之间的完美一致性。</span>
+              </p>
+              <div class="case-typescale">
+                <div class="case-typescale__row case-typescale__row--header">
+                  <span><span data-lang="en">Token</span><span data-lang="zh">令牌</span></span>
+                  <span><span data-lang="en">Size</span><span data-lang="zh">字号</span></span>
+                  <span><span data-lang="en">Weight</span><span data-lang="zh">字重</span></span>
+                </div>
+                <div class="case-typescale__row">
+                  <span class="case-typescale__sample" style="font-size:20px;font-weight:700"><span data-lang="en">Title</span><span data-lang="zh">标题</span></span>
+                  <span class="case-typescale__meta">20px</span>
+                  <span class="case-typescale__meta">Bold · 700</span>
+                </div>
+                <div class="case-typescale__row">
+                  <span class="case-typescale__sample" style="font-size:16px;font-weight:500"><span data-lang="en">Subtitle</span><span data-lang="zh">副标题</span></span>
+                  <span class="case-typescale__meta">16px</span>
+                  <span class="case-typescale__meta">Medium · 500</span>
+                </div>
+                <div class="case-typescale__row">
+                  <span class="case-typescale__sample" style="font-size:14px;font-weight:400"><span data-lang="en">Body</span><span data-lang="zh">正文</span></span>
+                  <span class="case-typescale__meta">14px</span>
+                  <span class="case-typescale__meta">Regular · 400</span>
+                </div>
+                <div class="case-typescale__row">
+                  <span class="case-typescale__sample" style="font-size:12px;font-weight:400"><span data-lang="en">Small body</span><span data-lang="zh">小正文</span></span>
+                  <span class="case-typescale__meta">12px</span>
+                  <span class="case-typescale__meta">Regular · 400</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- DS Block 2 — Buttons -->
+            <div class="case-ds__block">
+              <p class="case-ds__block-label">
+                <span data-lang="en">Molecules</span>
+                <span data-lang="zh">分子</span>
+              </p>
+              <h3 class="case-ds__block-title">
+                <span data-lang="en">Button library</span>
+                <span data-lang="zh">按钮库</span>
+              </h3>
+              <p class="case-ds__block-text">
+                <span data-lang="en">A button library covering three sizes, four states (default, hover, pressed, disabled), and two icon variants: without prefix and with prefix.</span>
+                <span data-lang="zh">按钮库涵盖三种尺寸、四种状态（默认、悬停、按下、禁用），以及两种图标变体：无前缀图标与有前缀图标。</span>
+              </p>
+              <div class="case-ds__image">
+                <!-- Design system export: Button components sheet — all sizes, states, and icon variants in a Figma component overview -->
+              </div>
+            </div>
+
+            <!-- DS Block 3 — Cards -->
+            <div class="case-ds__block">
+              <p class="case-ds__block-label">
+                <span data-lang="en">Organisms</span>
+                <span data-lang="zh">有机体</span>
+              </p>
+              <h3 class="case-ds__block-title">
+                <span data-lang="en">Trip cards</span>
+                <span data-lang="zh">行程卡片</span>
+              </h3>
+              <p class="case-ds__block-text">
+                <span data-lang="en">Trip cards exist in three formats: large hero, medium list, and small thumbnail, each adapted to its display context with its own metadata (date, participants, primary action).</span>
+                <span data-lang="zh">行程卡片有三种规格：大型主角卡、中型列表卡与小型缩略图卡——每种规格根据其展示场景适配，并附带独立的元数据（日期、参与者、主操作）。</span>
+              </p>
+              <div class="case-ds__image">
+                <!-- Design system export: Card components sheet — large, medium, and small card variants with metadata and states -->
+              </div>
+            </div>
+
+            <!-- DS Block 4 — Bottom Sheets -->
+            <div class="case-ds__block">
+              <p class="case-ds__block-label">
+                <span data-lang="en">Organisms</span>
+                <span data-lang="zh">有机体</span>
+              </p>
+              <h3 class="case-ds__block-title">
+                <span data-lang="en">Bottom sheets</span>
+                <span data-lang="zh">底部弹出层</span>
+              </h3>
+              <p class="case-ds__block-text">
+                <span data-lang="en">Bottom sheets are WePlan's central interaction pattern. Four variants: activity detail, add activity, create poll, and trip overview, maintaining context while enabling deep actions.</span>
+                <span data-lang="zh">底部弹出层是 WePlan 的核心交互模式。四种变体：活动详情、添加活动、创建投票与行程概览——在保持上下文的同时，支持深层操作。</span>
+              </p>
+              <div class="case-ds__image">
+                <!-- Design system export: Bottom sheet components sheet — all 4 variants overlaid on a dimmed app background -->
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 07 FEATURES ── -->
       <div class="case-features reveal">
         <div class="container">
           <div class="case-features__header">
@@ -590,141 +715,26 @@
         </div>
       </div>
 
-      <!-- ── 07 DESIGN SYSTEM ── -->
-      <div class="case-ds reveal">
-        <div class="container">
-
-          <div class="case-ds__header">
-            <p class="case-ds__label">
-              <span data-lang="en">Section 07: Design System</span>
-              <span data-lang="zh">第七部分：设计系统</span>
-            </p>
-            <h2 class="case-ds__title">
-              <span data-lang="en">A design system built to scale</span>
-              <span data-lang="zh">一个为规模化而构建的设计系统</span>
-            </h2>
-            <p class="case-ds__intro">
-              <span data-lang="en">Beyond the app itself, a structured design system was built from the ground up following Atomic Design methodology, from foundational tokens to complex organisms. Every component was designed with states, variants, and scalability in mind.</span>
-              <span data-lang="zh">在应用本身之外，我们以原子设计方法论为指导，从零构建了一套完整的设计系统——从基础令牌到复杂的有机体组件。每个组件均考虑了状态、变体与可扩展性。</span>
-            </p>
-          </div>
-
-          <div class="case-ds__blocks">
-
-            <!-- DS Block 1 — Typography -->
-            <div class="case-ds__block">
-              <p class="case-ds__block-label">
-                <span data-lang="en">Atoms</span>
-                <span data-lang="zh">原子</span>
-              </p>
-              <h3 class="case-ds__block-title">
-                <span data-lang="en">Typography tokens</span>
-                <span data-lang="zh">字体令牌</span>
-              </h3>
-              <p class="case-ds__block-text">
-                <span data-lang="en">Typographic tokens define every text style in the system, from Bold 20 title to Regular 12 small body, ensuring perfect consistency between Figma and code.</span>
-                <span data-lang="zh">字体令牌定义了系统中的每一种文字样式，从粗体20号标题到常规12号小正文——确保 Figma 与代码之间的完美一致性。</span>
-              </p>
-              <div class="case-typescale">
-                <div class="case-typescale__row case-typescale__row--header">
-                  <span><span data-lang="en">Token</span><span data-lang="zh">令牌</span></span>
-                  <span><span data-lang="en">Size</span><span data-lang="zh">字号</span></span>
-                  <span><span data-lang="en">Weight</span><span data-lang="zh">字重</span></span>
-                </div>
-                <div class="case-typescale__row">
-                  <span class="case-typescale__sample" style="font-size:20px;font-weight:700"><span data-lang="en">Title</span><span data-lang="zh">标题</span></span>
-                  <span class="case-typescale__meta">20px</span>
-                  <span class="case-typescale__meta">Bold · 700</span>
-                </div>
-                <div class="case-typescale__row">
-                  <span class="case-typescale__sample" style="font-size:16px;font-weight:500"><span data-lang="en">Subtitle</span><span data-lang="zh">副标题</span></span>
-                  <span class="case-typescale__meta">16px</span>
-                  <span class="case-typescale__meta">Medium · 500</span>
-                </div>
-                <div class="case-typescale__row">
-                  <span class="case-typescale__sample" style="font-size:14px;font-weight:400"><span data-lang="en">Body</span><span data-lang="zh">正文</span></span>
-                  <span class="case-typescale__meta">14px</span>
-                  <span class="case-typescale__meta">Regular · 400</span>
-                </div>
-                <div class="case-typescale__row">
-                  <span class="case-typescale__sample" style="font-size:12px;font-weight:400"><span data-lang="en">Small body</span><span data-lang="zh">小正文</span></span>
-                  <span class="case-typescale__meta">12px</span>
-                  <span class="case-typescale__meta">Regular · 400</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- DS Block 2 — Buttons -->
-            <div class="case-ds__block">
-              <p class="case-ds__block-label">
-                <span data-lang="en">Molecules</span>
-                <span data-lang="zh">分子</span>
-              </p>
-              <h3 class="case-ds__block-title">
-                <span data-lang="en">Button library</span>
-                <span data-lang="zh">按钮库</span>
-              </h3>
-              <p class="case-ds__block-text">
-                <span data-lang="en">A button library covering three sizes, four states (default, hover, pressed, disabled), and two icon variants: without prefix and with prefix.</span>
-                <span data-lang="zh">按钮库涵盖三种尺寸、四种状态（默认、悬停、按下、禁用），以及两种图标变体：无前缀图标与有前缀图标。</span>
-              </p>
-              <div class="case-ds__image">
-                <!-- Design system export: Button components sheet — all sizes, states, and icon variants in a Figma component overview -->
-              </div>
-            </div>
-
-            <!-- DS Block 3 — Cards -->
-            <div class="case-ds__block">
-              <p class="case-ds__block-label">
-                <span data-lang="en">Organisms</span>
-                <span data-lang="zh">有机体</span>
-              </p>
-              <h3 class="case-ds__block-title">
-                <span data-lang="en">Trip cards</span>
-                <span data-lang="zh">行程卡片</span>
-              </h3>
-              <p class="case-ds__block-text">
-                <span data-lang="en">Trip cards exist in three formats: large hero, medium list, and small thumbnail, each adapted to its display context with its own metadata (date, participants, primary action).</span>
-                <span data-lang="zh">行程卡片有三种规格：大型主角卡、中型列表卡与小型缩略图卡——每种规格根据其展示场景适配，并附带独立的元数据（日期、参与者、主操作）。</span>
-              </p>
-              <div class="case-ds__image">
-                <!-- Design system export: Card components sheet — large, medium, and small card variants with metadata and states -->
-              </div>
-            </div>
-
-            <!-- DS Block 4 — Bottom Sheets -->
-            <div class="case-ds__block">
-              <p class="case-ds__block-label">
-                <span data-lang="en">Organisms</span>
-                <span data-lang="zh">有机体</span>
-              </p>
-              <h3 class="case-ds__block-title">
-                <span data-lang="en">Bottom sheets</span>
-                <span data-lang="zh">底部弹出层</span>
-              </h3>
-              <p class="case-ds__block-text">
-                <span data-lang="en">Bottom sheets are WePlan's central interaction pattern. Four variants: activity detail, add activity, create poll, and trip overview, maintaining context while enabling deep actions.</span>
-                <span data-lang="zh">底部弹出层是 WePlan 的核心交互模式。四种变体：活动详情、添加活动、创建投票与行程概览——在保持上下文的同时，支持深层操作。</span>
-              </p>
-              <div class="case-ds__image">
-                <!-- Design system export: Bottom sheet components sheet — all 4 variants overlaid on a dimmed app background -->
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
       <!-- ── 08 KEY LEARNINGS ── -->
       <div class="case-learnings container reveal">
         <h2 class="case-learnings__title">
           <span data-lang="en">Key Learnings</span>
           <span data-lang="zh">关键收获</span>
         </h2>
-        <p class="case-learnings__text">
-          <span data-lang="en">Placeholder: What did you learn from this project? How did building a design system alongside the product change your design thinking? What would you do differently on the system architecture? What tradeoffs did you make between polish and scope?</span>
-          <span data-lang="zh">待填写：这个项目让你学到了什么？在开发产品的同时构建设计系统，如何改变了你的设计思维？在系统架构上，你会做哪些不同的选择？你在精细度与范围之间做了哪些权衡？</span>
-        </p>
+        <ul class="case-list" style="max-width:700px;margin:0 auto;text-align:left;">
+          <li class="case-list__item">
+            <span data-lang="en">Building a design system from scratch gave me a deep appreciation for naming conventions and component architecture. Decisions made at the atom level ripple through every screen.</span>
+            <span data-lang="zh">从零开始构建设计系统让我深刻理解了命名规范和组件架构的重要性，原子层面的决策会影响每一个页面。</span>
+          </li>
+          <li class="case-list__item">
+            <span data-lang="en">Designing for group dynamics — polls, shared planning, collective decisions — introduced social UX challenges I hadn't anticipated. The hardest part was modeling how groups actually make decisions together.</span>
+            <span data-lang="zh">为群体动态设计——投票、共享规划、集体决策——带来了我未曾预料到的社交UX挑战，最难的是建模群体实际做决策的方式。</span>
+          </li>
+          <li class="case-list__item">
+            <span data-lang="en">Maintaining consistency between the design system and the product screens required constant back-and-forth. I learned to treat the system as a living document, not a finished deliverable.</span>
+            <span data-lang="zh">保持设计系统与产品页面之间的一致性需要不断调整，我学会了将系统视为活文档而非已完成的交付物。</span>
+          </li>
+        </ul>
       </div>
 
     </article>
@@ -757,7 +767,7 @@
           <span data-lang="en">Interested in working together? Let's talk.</span>
           <span data-lang="zh">想合作？欢迎联系。</span>
         </p>
-        <a href="mailto:hello@paulbarroux.com" class="contact__email reveal" data-delay="200">hello@paulbarroux.com</a>
+        <a href="mailto:paulbarroux@icloud.com" class="contact__email reveal" data-delay="200">paulbarroux@icloud.com</a>
 
         <div class="contact__wechat reveal" data-delay="300">
           <p class="contact__wechat-label">
