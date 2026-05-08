@@ -972,9 +972,20 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
   color: var(--color-text-secondary);
 }
 
+/* Header hero image (replaces blank spacer when a real image is provided) */
+.case-header__hero-img {
+  width: 100%;
+}
+.case-header__hero-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
 /* Tags row below the header */
 .case-tags {
-  padding: var(--space-md) 0 var(--space-lg);
+  padding: var(--space-lg) 0;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -1229,6 +1240,14 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
   color: var(--color-text-secondary);
 }
 
+/* Intro context variant — tighter gap and padding for text-heavy cards */
+.case-methodology--intro .case-methodology__cards {
+  gap: var(--space-md);
+}
+.case-methodology--intro .case-methodology__card {
+  padding: var(--space-md);
+}
+
 /* Competitive Benchmark — 2-card layout */
 .case-benchmark {
   padding: 110px 0;
@@ -1322,6 +1341,57 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
   font-size: var(--text-small);
   color: var(--color-text-secondary);
   margin-top: var(--space-lg);
+}
+
+/* ── Real image overrides (remove placeholder styling when an img is present) ── */
+.case-block__image:has(img),
+.case-audience__image:has(img) {
+  aspect-ratio: unset;
+  background: none;
+  display: block;
+}
+.case-wireframes__image:has(img) {
+  aspect-ratio: unset;
+  background: none;
+  display: block;
+}
+.case-block__image img,
+.case-wireframes__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+.case-audience__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+/* Desktop project card images */
+.projects__slide-image:has(img) {
+  background: none;
+  padding: 0;
+  display: block;
+}
+.projects__slide-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius);
+}
+/* Mobile project card images */
+.projects__mobile-image:has(img) {
+  background: none;
+  display: block;
+}
+.projects__mobile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius);
 }
 
 /* ── Problem Statement (centered question) ── */
