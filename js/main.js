@@ -119,8 +119,8 @@
      ----------------------------------------- */
   var STORAGE_KEY = 'pb_lang';
   var TITLES = {
-    en: { home: "Paul Barroux — UX/UI Designer", about: "About — Paul Barroux", project: null },
-    zh: { home: "Paul Barroux — UX/UI 设计师", about: "关于 — Paul Barroux", project: null }
+    en: { home: "Paul Barroux · UX/UI Designer", about: "About Paul Barroux", project: null },
+    zh: { home: "Paul Barroux · UX/UI 设计师", about: "关于 Paul Barroux", project: null }
   };
 
   var TYPING = {

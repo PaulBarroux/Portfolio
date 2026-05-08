@@ -1037,52 +1037,6 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
   color: var(--color-text-secondary);
 }
 
-/* Solution section — full-width gallery */
-.case-solution {
-  padding: 110px 0;
-  border-bottom: 1px solid var(--color-divider);
-}
-
-.case-solution__title {
-  font-family: var(--font-heading);
-  font-size: var(--text-case-section);
-  line-height: var(--leading-heading);
-  color: var(--color-text);
-  margin-bottom: 8px;
-}
-
-.case-solution__subtitle {
-  font-size: var(--text-small);
-  color: var(--color-text-secondary);
-  margin-bottom: var(--space-lg);
-}
-
-.case-solution__gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-md);
-  margin-bottom: var(--space-lg);
-}
-
-.case-solution__image {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  background: var(--color-placeholder);
-  border-radius: var(--radius);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-text-secondary);
-  font-size: var(--text-small);
-}
-
-.case-solution__text {
-  font-size: var(--text-body);
-  line-height: var(--leading-body);
-  color: var(--color-text-secondary);
-  max-width: 720px;
-}
-
 /* Key Learnings — centered text */
 .case-learnings {
   padding: 110px 0;
@@ -1398,10 +1352,9 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
   margin: 0 auto;
 }
 
-/* ── Guiding Principle (inverted philosophy statement) ── */
+/* ── Guiding Principle ── */
 .case-principle {
   padding: var(--space-section) 0;
-  background: var(--color-text);
   text-align: center;
 }
 
@@ -1410,7 +1363,7 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
   font-weight: 600;
   letter-spacing: var(--tracking-label);
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--color-primary);
   margin-bottom: var(--space-lg);
 }
 
@@ -1418,7 +1371,7 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
   font-family: var(--font-heading);
   font-size: 36px;
   line-height: 1.35;
-  color: #ffffff;
+  color: var(--color-text);
   max-width: 720px;
   margin: 0 auto;
 }
@@ -2366,10 +2319,9 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
   max-width: 640px;
 }
 
-/* ── Design System — dark inverted section ── */
+/* ── Design System section ── */
 .case-ds {
   padding: 110px 0;
-  background: var(--color-text);
 }
 
 .case-ds__header {
@@ -2382,7 +2334,7 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
   font-weight: 600;
   letter-spacing: var(--tracking-label);
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--color-primary);
   margin-bottom: var(--space-xs);
 }
 
@@ -2390,14 +2342,14 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
   font-family: var(--font-heading);
   font-size: var(--text-case-section);
   line-height: var(--leading-heading);
-  color: #ffffff;
+  color: var(--color-text);
   margin-bottom: var(--space-md);
 }
 
 .case-ds__intro {
   font-size: var(--text-body);
   line-height: var(--leading-body);
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--color-text-secondary);
   max-width: 680px;
   margin: 0 auto;
 }
@@ -2410,8 +2362,8 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
 }
 
 .case-ds__block {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--color-surface);
+  border: 1px solid var(--color-surface-border);
   border-radius: 20px;
   padding: var(--space-xl);
 }
@@ -2421,7 +2373,7 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
   font-weight: 600;
   letter-spacing: var(--tracking-label);
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--color-primary);
   margin-bottom: var(--space-xs);
 }
 
@@ -2429,50 +2381,28 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
   font-family: var(--font-heading);
   font-size: 26px;
   line-height: var(--leading-heading);
-  color: #ffffff;
+  color: var(--color-text);
   margin-bottom: var(--space-sm);
 }
 
 .case-ds__block-text {
   font-size: var(--text-body);
   line-height: var(--leading-body);
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--color-text-secondary);
   margin-bottom: var(--space-lg);
 }
 
 .case-ds__image {
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--color-surface);
+  border: 1px solid var(--color-divider);
   border-radius: 12px;
   aspect-ratio: 16/8;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: var(--text-label);
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--color-text-secondary);
   font-weight: 500;
-}
-
-/* Type scale dark overrides (inside .case-ds) */
-.case-ds .case-typescale {
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
-.case-ds .case-typescale__row {
-  border-bottom-color: rgba(255, 255, 255, 0.07);
-}
-
-.case-ds .case-typescale__row--header {
-  background: rgba(255, 255, 255, 0.06);
-  color: rgba(255, 255, 255, 0.4);
-}
-
-.case-ds .case-typescale__sample {
-  color: #ffffff;
-}
-
-.case-ds .case-typescale__meta {
-  color: rgba(255, 255, 255, 0.45);
 }
 
 /* Visual Identity — 3-column benchmark variant */
@@ -2604,10 +2534,6 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
   /* Case study content blocks */
   .case-block__grid {
     gap: var(--space-lg);
-  }
-
-  .case-solution__gallery {
-    grid-template-columns: repeat(2, 1fr);
   }
 
   /* Extended components — tablet */
@@ -2843,14 +2769,6 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
 
   .case-block--reversed .case-block__grid {
     direction: ltr;
-  }
-
-  .case-solution {
-    padding: 60px 0;
-  }
-
-  .case-solution__gallery {
-    grid-template-columns: 1fr;
   }
 
   .case-learnings {
