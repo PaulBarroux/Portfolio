@@ -2068,6 +2068,24 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
   line-height: var(--leading-body);
 }
 
+/* Visual Identity — 3-column benchmark variant */
+.case-benchmark__cards--three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.case-benchmark__card-img {
+  background: var(--color-divider);
+  border-radius: 8px;
+  aspect-ratio: 4/3;
+  margin-bottom: var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-label);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
 /* Project navigation at bottom */
 .project-nav {
   padding: var(--space-lg) 0;
@@ -2194,6 +2212,10 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
   .case-benchmark__cards {
     grid-template-columns: 1fr;
     gap: var(--space-md);
+  }
+
+  .case-benchmark__cards--three {
+    grid-template-columns: 1fr 1fr;
   }
 
   .case-audience__grid {
@@ -2432,6 +2454,10 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
   .case-benchmark__cards {
     grid-template-columns: 1fr;
     gap: var(--space-md);
+  }
+
+  .case-benchmark__cards--three {
+    grid-template-columns: 1fr;
   }
 
   .case-audience {
