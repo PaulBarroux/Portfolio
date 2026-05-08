@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cegedim AI Workshop — Integrating artificial intelligence into professional software. Three concrete concepts designed in one week.">
+  <meta property="og:title" content="Cegedim AI Workshop — Paul Barroux">
+  <meta property="og:description" content="Integrating artificial intelligence into professional software — three concrete concepts designed in one week.">
+  <meta property="og:type" content="website">
+  <title>Cegedim AI Workshop — Paul Barroux</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%232B59C3'/><text x='50%25' y='55%25' dominant-baseline='central' text-anchor='middle' fill='white' font-family='serif' font-size='20' font-weight='bold'>P</text></svg>">
+
+  <!-- Fonts (self-hosted) & Styles -->
+  <link rel="preload" href="assets/fonts/Inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/DMSerifDisplay-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="project">
+
+  <!-- ========== NAVIGATION ========== -->
+  <header class="navbar" role="banner">
+    <nav class="navbar__inner" role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="navbar__logo">Paul Barroux</a>
+      <div class="navbar__links">
+        <a href="index.html#projects" class="navbar__link"><span data-lang="en">Projects</span><span data-lang="zh">项目</span></a>
+        <a href="about.html" class="navbar__link"><span data-lang="en">About</span><span data-lang="zh">关于</span></a>
+        <a href="#contact" class="navbar__link"><span data-lang="en">Contact</span><span data-lang="zh">联系</span></a>
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button class="lang-toggle__btn active" data-set-lang="en" type="button" aria-label="English">EN</button>
+          <span class="lang-toggle__sep" aria-hidden="true">/</span>
+          <button class="lang-toggle__btn" data-set-lang="zh" type="button" aria-label="中文">中</button>
+        </div>
+      </div>
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu__overlay" aria-hidden="true"></div>
+  <div class="mobile-menu" aria-hidden="true">
+    <a href="index.html#projects" class="mobile-menu__link"><span data-lang="en">Projects</span><span data-lang="zh">项目</span></a>
+    <a href="about.html" class="mobile-menu__link"><span data-lang="en">About</span><span data-lang="zh">关于</span></a>
+    <a href="#contact" class="mobile-menu__link"><span data-lang="en">Contact</span><span data-lang="zh">联系</span></a>
+    <div class="lang-toggle lang-toggle--mobile" role="group" aria-label="Language">
+      <button class="lang-toggle__btn active" data-set-lang="en" type="button">EN</button>
+      <span class="lang-toggle__sep" aria-hidden="true">/</span>
+      <button class="lang-toggle__btn" data-set-lang="zh" type="button">中</button>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ========== HEADER ========== -->
+    <section class="case-header">
+      <div class="container">
+        <div class="case-header__inner">
+          <div class="case-header__spacer"></div>
+          <div class="case-header__content reveal">
+            <p class="case-header__breadcrumb">
+              <span data-lang="en">Case Studies / Cegedim AI Workshop</span>
+              <span data-lang="zh">案例研究 / Cegedim AI 工作坊</span>
+            </p>
+            <h1 class="case-header__title">
+              <span data-lang="en">Cegedim AI Workshop</span>
+              <span data-lang="zh">Cegedim AI 工作坊</span>
+            </h1>
+            <p class="case-header__desc">
+              <span data-lang="en">Integrating artificial intelligence into professional software — three concrete concepts designed in one week.</span>
+              <span data-lang="zh">将人工智能融入专业软件——在一周内设计出三个具体概念。</span>
+            </p>
+            <p class="case-header__meta">
+              <span data-lang="en">2025 &bull; 1-week Design Sprint &mdash; Upgrade agency &times; Cegedim &bull; HealthTech / B2B</span>
+              <span data-lang="zh">2025 &bull; 一周设计冲刺 &mdash; Upgrade 机构 &times; Cegedim &bull; 医疗科技 / B2B</span>
+            </p>
+            <p class="case-header__meta">
+              <span data-lang="en">Roles: UX &middot; AI &middot; UX Research &middot; User Journeys &nbsp;&nbsp; Tools: Figma &middot; Notion &middot; FigJam</span>
+              <span data-lang="zh">角色：UX &middot; 人工智能 &middot; UX 研究 &middot; 用户旅程 &nbsp;&nbsp; 工具：Figma &middot; Notion &middot; FigJam</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tags -->
+    <div class="container">
+      <div class="case-tags reveal">
+        <span class="tag"><span data-lang="en">AI Integration</span><span data-lang="zh">AI 整合</span></span>
+        <span class="tag"><span data-lang="en">HealthTech</span><span data-lang="zh">医疗科技</span></span>
+        <span class="tag"><span data-lang="en">B2B</span><span data-lang="zh">B2B</span></span>
+        <span class="tag"><span data-lang="en">Design Sprint</span><span data-lang="zh">设计冲刺</span></span>
+        <span class="tag"><span data-lang="en">UX Research</span><span data-lang="zh">UX 研究</span></span>
+      </div>
+    </div>
+
+    <!-- ========== CASE STUDY CONTENT ========== -->
+    <article>
+
+      <!-- ── Section 01: Context ── -->
+      <div class="case-block container reveal">
+        <div class="case-block__grid">
+          <!-- Mockup: Upharma software interface screenshot -->
+          <div class="case-block__image">
+            <span data-lang="en">Upharma Interface</span>
+            <span data-lang="zh">Upharma 界面</span>
+          </div>
+          <div class="case-block__content">
+            <h2 class="case-block__title">
+              <span data-lang="en">AI in a professional environment</span>
+              <span data-lang="zh">专业环境中的人工智能</span>
+            </h2>
+            <p class="case-block__subtitle">
+              <span data-lang="en">One week. One product. Three integration concepts.</span>
+              <span data-lang="zh">一周。一款产品。三个整合概念。</span>
+            </p>
+            <p class="case-block__text">
+              <span data-lang="en">During a one-week workshop, guided by the team at Upgrade agency, we were tasked with researching and proposing three ways to integrate AI into the software of Cegedim — a publisher of management software for both private and public sector companies.</span>
+              <span data-lang="zh">在为期一周的工作坊中，在 Upgrade 机构团队的指导下，我们的任务是研究并提出三种将 AI 融入 Cegedim 软件的方式——Cegedim 是一家面向私营和公共部门企业的管理软件出版商。</span>
+            </p>
+            <p class="case-block__text" style="margin-top: var(--space-md);">
+              <span data-lang="en">The product in focus: <strong>Upharma</strong>, Cegedim's pharmacy management software. Our mission: make AI an ideal colleague.</span>
+              <span data-lang="zh">聚焦产品：<strong>Upharma</strong>，Cegedim 的药店管理软件。我们的使命：让 AI 成为理想的同事。</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Section 02: Problem Statement ── -->
+      <div class="case-question container reveal">
+        <p class="case-question__label">
+          <span data-lang="en">Problem Statement</span>
+          <span data-lang="zh">问题陈述</span>
+        </p>
+        <p class="case-question__quote">
+          <span data-lang="en">"How can AI help Cegedim software users make better decisions and take more effective action?"</span>
+          <span data-lang="zh">「AI 如何帮助 Cegedim 软件用户做出更好的决策并采取更有效的行动？」</span>
+        </p>
+        <p class="case-question__text">
+          <span data-lang="en">The challenge wasn't to add AI for the sake of it — but to integrate it where it creates real value for professionals, without disrupting their existing workflows or generating distrust toward the tool.</span>
+          <span data-lang="zh">挑战不在于为了 AI 而添加 AI——而是要将其融入真正为专业人士创造价值的场景，同时不干扰现有工作流程，也不引发对工具的不信任。</span>
+        </p>
+      </div>
+
+      <!-- ── Section 03: Challenges ── -->
+      <div class="case-problem container reveal">
+        <div class="case-problem__header">
+          <h2 class="case-problem__title">
+            <span data-lang="en">The stakes of AI in a professional context</span>
+            <span data-lang="zh">专业情境中 AI 的关键挑战</span>
+          </h2>
+          <p class="case-problem__subtitle">
+            <span data-lang="en">Four constraints that shaped every design decision.</span>
+            <span data-lang="zh">塑造每一个设计决策的四大约束条件。</span>
+          </p>
+        </div>
+        <div class="case-problem__grid">
+
+          <div class="case-problem__card">
+            <p class="case-problem__card-num">
+              <span data-lang="en">Challenge 01</span>
+              <span data-lang="zh">挑战 01</span>
+            </p>
+            <h3 class="case-problem__card-category">
+              <span data-lang="en">Frictionless adoption</span>
+              <span data-lang="zh">无摩擦采用</span>
+            </h3>
+            <p class="case-problem__card-text">
+              <span data-lang="en">Avoid resistance toward a tool perceived as intrusive or destabilizing in an already established workflow.</span>
+              <span data-lang="zh">避免对被视为具有侵入性或破坏现有工作流程的工具产生抵触情绪。</span>
+            </p>
+          </div>
+
+          <div class="case-problem__card">
+            <p class="case-problem__card-num">
+              <span data-lang="en">Challenge 02</span>
+              <span data-lang="zh">挑战 02</span>
+            </p>
+            <h3 class="case-problem__card-category">
+              <span data-lang="en">Multi-profile users</span>
+              <span data-lang="zh">多样化用户群体</span>
+            </h3>
+            <p class="case-problem__card-text">
+              <span data-lang="en">Manager, department head, seasonal employee: very different needs, skill levels, and degrees of autonomy.</span>
+              <span data-lang="zh">管理者、部门负责人、季节性员工：需求、技能水平和自主程度差异显著。</span>
+            </p>
+          </div>
+
+          <div class="case-problem__card">
+            <p class="case-problem__card-num">
+              <span data-lang="en">Challenge 03</span>
+              <span data-lang="zh">挑战 03</span>
+            </p>
+            <h3 class="case-problem__card-category">
+              <span data-lang="en">One-week constraint</span>
+              <span data-lang="zh">一周约束</span>
+            </h3>
+            <p class="case-problem__card-text">
+              <span data-lang="en">Deliver 3 concrete, argued, client-ready proposals in 5 days of intensive work.</span>
+              <span data-lang="zh">在 5 天高强度工作中，交付 3 个具体、有充分论证且可提交给客户的方案。</span>
+            </p>
+          </div>
+
+          <div class="case-problem__card">
+            <p class="case-problem__card-num">
+              <span data-lang="en">Challenge 04</span>
+              <span data-lang="zh">挑战 04</span>
+            </p>
+            <h3 class="case-problem__card-category">
+              <span data-lang="en">Complex business software</span>
+              <span data-lang="zh">复杂的企业软件</span>
+            </h3>
+            <p class="case-problem__card-text">
+              <span data-lang="en">Operate within a dense software environment (stock, billing, HR, purchase flows) with an AI that remains discreet and non-blocking.</span>
+              <span data-lang="zh">在密集的软件环境中（库存、计费、HR、采购流程）运作，同时确保 AI 保持低调且不阻断流程。</span>
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── Section 04: Guiding Principle ── -->
+      <div class="case-principle reveal">
+        <div class="container">
+          <p class="case-principle__label">
+            <span data-lang="en">Guiding Principle</span>
+            <span data-lang="zh">指导原则</span>
+          </p>
+          <p class="case-principle__quote">
+            <span data-lang="en">"The AI only takes up the space it's given. The user always remains the origin of every decision."</span>
+            <span data-lang="zh">「AI 只占用被赋予它的空间。用户始终是每个决策的原点。」</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- ── Section 05: Methodology ── -->
+      <div class="case-methodology reveal">
+        <div class="container">
+          <div class="case-methodology__header">
+            <h2 class="case-methodology__title">
+              <span data-lang="en">From research to proposal in one week</span>
+              <span data-lang="zh">一周内从研究到方案</span>
+            </h2>
+            <p class="case-methodology__subtitle">
+              <span data-lang="en">Four steps, two personas, three deliverables.</span>
+              <span data-lang="zh">四个步骤，两个用户画像，三份交付成果。</span>
+            </p>
+          </div>
+
+          <div class="case-steps">
+
+            <div class="case-step">
+              <span class="case-step__num">01</span>
+              <div class="case-step__body">
+                <h3 class="case-step__title">
+                  <span data-lang="en">AI capability research</span>
+                  <span data-lang="zh">AI 能力研究</span>
+                </h3>
+                <p class="case-step__text">
+                  <span data-lang="en">Three families of applicable AI were identified: <strong>prediction</strong> (anticipating needs from data), <strong>generation</strong> (producing content and analyses), <strong>automation</strong> (reducing repetitive tasks). Interaction modes selected: button, questionnaire, notifications and reminders — intentionally non-intrusive.</span>
+                  <span data-lang="zh">识别出三类可应用的 AI 能力：<strong>预测</strong>（从数据中预见需求）、<strong>生成</strong>（产出内容和分析）、<strong>自动化</strong>（减少重复性任务）。选定的交互方式：按钮、问卷、通知与提醒——刻意保持非侵入性。</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="case-step">
+              <span class="case-step__num">02</span>
+              <div class="case-step__body">
+                <h3 class="case-step__title">
+                  <span data-lang="en">Persona construction</span>
+                  <span data-lang="zh">用户画像构建</span>
+                </h3>
+                <p class="case-step__text">
+                  <span data-lang="en">Two user profiles guided the entire project — representing the breadth of Upharma's user base.</span>
+                  <span data-lang="zh">两个用户画像贯穿整个项目——代表 Upharma 用户群体的广度。</span>
+                </p>
+                <div class="case-personas">
+
+                  <div class="case-persona">
+                    <div class="case-persona__header">
+                      <div class="case-persona__avatar" aria-hidden="true">F</div>
+                      <div>
+                        <p class="case-persona__name">Florence</p>
+                        <p class="case-persona__role">
+                          <span data-lang="en">Manager · 50</span>
+                          <span data-lang="zh">管理者 · 50 岁</span>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="case-persona__facts">
+                      <div>
+                        <p class="case-persona__fact-label">
+                          <span data-lang="en">Goal</span>
+                          <span data-lang="zh">目标</span>
+                        </p>
+                        <p class="case-persona__fact-text">
+                          <span data-lang="en">Efficiently manage orders, finances, and disputes</span>
+                          <span data-lang="zh">高效管理订单、财务和纠纷</span>
+                        </p>
+                      </div>
+                      <div>
+                        <p class="case-persona__fact-label">
+                          <span data-lang="en">Pain point</span>
+                          <span data-lang="zh">痛点</span>
+                        </p>
+                        <p class="case-persona__fact-text">
+                          <span data-lang="en">No visibility on future stock needs; manual management of supplier disputes</span>
+                          <span data-lang="zh">对未来库存需求缺乏可见性；人工处理供应商纠纷</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="case-persona">
+                    <div class="case-persona__header">
+                      <div class="case-persona__avatar" aria-hidden="true">J</div>
+                      <div>
+                        <p class="case-persona__name">Jordan</p>
+                        <p class="case-persona__role">
+                          <span data-lang="en">Department Head · 33</span>
+                          <span data-lang="zh">部门负责人 · 33 岁</span>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="case-persona__facts">
+                      <div>
+                        <p class="case-persona__fact-label">
+                          <span data-lang="en">Goal</span>
+                          <span data-lang="zh">目标</span>
+                        </p>
+                        <p class="case-persona__fact-text">
+                          <span data-lang="en">Ensure optimal stock levels; track sales and promotions</span>
+                          <span data-lang="zh">确保最优库存水平；跟踪销售和促销活动</span>
+                        </p>
+                      </div>
+                      <div>
+                        <p class="case-persona__fact-label">
+                          <span data-lang="en">Pain point</span>
+                          <span data-lang="zh">痛点</span>
+                        </p>
+                        <p class="case-persona__fact-text">
+                          <span data-lang="en">Interface too rigid; limited access to real-time sales data</span>
+                          <span data-lang="zh">界面过于僵硬；获取实时销售数据受限</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="case-step">
+              <span class="case-step__num">03</span>
+              <div class="case-step__body">
+                <h3 class="case-step__title">
+                  <span data-lang="en">Ideation across 4 domains</span>
+                  <span data-lang="zh">四大领域的创意生成</span>
+                </h3>
+                <p class="case-step__text">
+                  <span data-lang="en">From the personas and research, ideas were generated across four functional areas of Upharma: <strong>HR management</strong>, <strong>billing</strong>, <strong>stock</strong>, and <strong>purchase &amp; sales flows</strong>. These explorations converged into the 3 final solution axes.</span>
+                  <span data-lang="zh">结合用户画像和研究成果，围绕 Upharma 的四大功能领域展开创意生成：<strong>HR 管理</strong>、<strong>计费</strong>、<strong>库存</strong>以及<strong>采购与销售流程</strong>。这些探索最终汇聚为 3 个解决方案轴线。</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="case-step">
+              <span class="case-step__num">04</span>
+              <div class="case-step__body">
+                <h3 class="case-step__title">
+                  <span data-lang="en">AI representation &amp; interaction design</span>
+                  <span data-lang="zh">AI 形象与交互设计</span>
+                </h3>
+                <p class="case-step__text">
+                  <span data-lang="en">The AI was represented as a dark blue sphere — discreet enough not to interfere in a professional interface, yet visible enough to be quickly spotted. Stars symbolize artificial intelligence, making it easy to identify at a glance.</span>
+                  <span data-lang="zh">AI 被呈现为深蓝色球体——低调到不干扰专业界面，同时又足够显眼以便快速识别。星形符号象征人工智能，使其一眼便可辨认。</span>
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Section 06: Solutions ── -->
+      <div class="case-section-intro container reveal">
+        <p class="case-section-intro__label">
+          <span data-lang="en">Solutions</span>
+          <span data-lang="zh">解决方案</span>
+        </p>
+        <h2 class="case-section-intro__title">
+          <span data-lang="en">3 AI integration axes</span>
+          <span data-lang="zh">3 个 AI 整合轴线</span>
+        </h2>
+      </div>
+
+      <!-- Axis 01 — Order Management Optimization -->
+      <div class="case-block container reveal">
+        <div class="case-block__grid">
+          <!-- Mockup: Order dashboard with AI suggestions panel -->
+          <div class="case-block__image">
+            <span data-lang="en">Order Dashboard — AI Suggestions</span>
+            <span data-lang="zh">订单仪表盘 — AI 建议</span>
+          </div>
+          <div class="case-block__content">
+            <p class="case-feature-label">
+              <span data-lang="en">Axis 01</span>
+              <span data-lang="zh">轴线 01</span>
+            </p>
+            <h2 class="case-block__title">
+              <span data-lang="en">Order Management Optimization</span>
+              <span data-lang="zh">订单管理优化</span>
+            </h2>
+
+            <p class="case-block__section-label">
+              <span data-lang="en">Problem</span>
+              <span data-lang="zh">问题</span>
+            </p>
+            <p class="case-block__text">
+              <span data-lang="en">Anticipate ordering needs, avoid stock shortages, and manage supplier disputes — currently a manual, reactive process with no predictive support.</span>
+              <span data-lang="zh">预测订购需求、避免库存短缺并管理供应商纠纷——目前是一个手动、被动的流程，没有预测性支持。</span>
+            </p>
+
+            <p class="case-block__section-label">
+              <span data-lang="en">AI Solution</span>
+              <span data-lang="zh">AI 解决方案</span>
+            </p>
+            <ul class="case-list">
+              <li class="case-list__item">
+                <span data-lang="en">Analysis of past sales to anticipate future needs</span>
+                <span data-lang="zh">分析历史销售数据以预见未来需求</span>
+              </li>
+              <li class="case-list__item">
+                <span data-lang="en">Automatic order suggestions with AI reasoning displayed — the user can always see <em>why</em> the AI made a suggestion</span>
+                <span data-lang="zh">自动订单建议并显示 AI 推理过程——用户始终可以看到 AI 提出建议的<em>原因</em></span>
+              </li>
+              <li class="case-list__item">
+                <span data-lang="en">Dispute management and payment reminders</span>
+                <span data-lang="zh">纠纷管理和付款提醒</span>
+              </li>
+            </ul>
+
+            <p class="case-block__section-label">
+              <span data-lang="en">AI / User Interaction</span>
+              <span data-lang="zh">AI / 用户交互</span>
+            </p>
+            <ul class="case-list">
+              <li class="case-list__item">
+                <span data-lang="en">Notification when products are at risk of stock-out</span>
+                <span data-lang="zh">产品面临缺货风险时发出通知</span>
+              </li>
+              <li class="case-list__item">
+                <span data-lang="en">Visual interface proposing suggested orders with justification</span>
+                <span data-lang="zh">可视化界面提出带理由的订单建议</span>
+              </li>
+              <li class="case-list__item">
+                <span data-lang="en">For each suggestion, the AI displays a detailed explanation of its reasoning — keeping the human as the final decision-maker</span>
+                <span data-lang="zh">对每个建议，AI 都会显示其推理的详细说明——确保人类是最终决策者</span>
+              </li>
+            </ul>
+
+            <!-- Mockup: AI reasoning detail view -->
+            <div class="case-block__image-secondary">
+              <span data-lang="en">AI Reasoning Detail View</span>
+              <span data-lang="zh">AI 推理详情视图</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Axis 02 — AI-Personalized Dashboard -->
+      <div class="case-block case-block--reversed container reveal">
+        <div class="case-block__grid">
+          <!-- Mockup: AI-personalized dashboard with integrated chat -->
+          <div class="case-block__image">
+            <span data-lang="en">AI-Personalized Dashboard + Chat</span>
+            <span data-lang="zh">AI 个性化仪表盘 + 聊天</span>
+          </div>
+          <div class="case-block__content">
+            <p class="case-feature-label">
+              <span data-lang="en">Axis 02</span>
+              <span data-lang="zh">轴线 02</span>
+            </p>
+            <h2 class="case-block__title">
+              <span data-lang="en">AI-Personalized Dashboard</span>
+              <span data-lang="zh">AI 个性化仪表盘</span>
+            </h2>
+
+            <p class="case-block__section-label">
+              <span data-lang="en">Problem</span>
+              <span data-lang="zh">问题</span>
+            </p>
+            <p class="case-block__text">
+              <span data-lang="en">Each employee has different needs (manager, department head, seasonal). Creating custom dashboard components is currently a manual process that must go through Cegedim directly.</span>
+              <span data-lang="zh">每位员工有不同需求（管理者、部门负责人、季节性员工）。创建自定义仪表盘组件目前是一个必须直接通过 Cegedim 操作的手动流程。</span>
+            </p>
+
+            <p class="case-block__section-label">
+              <span data-lang="en">AI Solution</span>
+              <span data-lang="zh">AI 解决方案</span>
+            </p>
+            <ul class="case-list">
+              <li class="case-list__item">
+                <span data-lang="en">The AI proposes the most relevant interface elements based on the user's profile</span>
+                <span data-lang="zh">AI 根据用户画像提出最相关的界面元素</span>
+              </li>
+              <li class="case-list__item">
+                <span data-lang="en">It adapts the layout and data presentation to usage habits</span>
+                <span data-lang="zh">根据使用习惯调整布局和数据呈现</span>
+              </li>
+              <li class="case-list__item">
+                <span data-lang="en">An integrated chat allows the user to correct or refine the AI's output in real time</span>
+                <span data-lang="zh">内置聊天功能让用户可以实时修正或优化 AI 的输出</span>
+              </li>
+            </ul>
+
+            <p class="case-block__section-label">
+              <span data-lang="en">AI / User Interaction</span>
+              <span data-lang="zh">AI / 用户交互</span>
+            </p>
+            <ul class="case-list">
+              <li class="case-list__item">
+                <span data-lang="en">Dynamic interface adaptation on login</span>
+                <span data-lang="zh">登录时动态调整界面</span>
+              </li>
+              <li class="case-list__item">
+                <span data-lang="en">Integrated chat for real-time customization</span>
+                <span data-lang="zh">集成聊天实现实时个性化</span>
+              </li>
+              <li class="case-list__item">
+                <span data-lang="en">The AI proposes customization axes and a layout suggestion — the user stays in control</span>
+                <span data-lang="zh">AI 提出定制化方向和布局建议——用户始终掌控全局</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Axis 03 — At-Risk Product Detection -->
+      <div class="case-block container reveal">
+        <div class="case-block__grid">
+          <!-- Mockup: At-risk products dashboard with criticality scores -->
+          <div class="case-block__image">
+            <span data-lang="en">At-Risk Products Dashboard</span>
+            <span data-lang="zh">风险产品仪表盘</span>
+          </div>
+          <div class="case-block__content">
+            <p class="case-feature-label">
+              <span data-lang="en">Axis 03</span>
+              <span data-lang="zh">轴线 03</span>
+            </p>
+            <h2 class="case-block__title">
+              <span data-lang="en">At-Risk Product Detection &amp; Targeted Promotions</span>
+              <span data-lang="zh">风险产品检测与精准促销</span>
+            </h2>
+
+            <p class="case-block__section-label">
+              <span data-lang="en">Problem</span>
+              <span data-lang="zh">问题</span>
+            </p>
+            <p class="case-block__text">
+              <span data-lang="en">Managing unsold items and perishable products before they become a financial loss for the pharmacy.</span>
+              <span data-lang="zh">在未售出商品和易腐产品造成药店财务损失之前进行管理。</span>
+            </p>
+
+            <p class="case-block__section-label">
+              <span data-lang="en">AI Solution</span>
+              <span data-lang="zh">AI 解决方案</span>
+            </p>
+            <ul class="case-list">
+              <li class="case-list__item">
+                <span data-lang="en">Proactive detection of at-risk products</span>
+                <span data-lang="zh">主动检测风险产品</span>
+              </li>
+              <li class="case-list__item">
+                <span data-lang="en">Criticality scoring dashboard for real-time visibility</span>
+                <span data-lang="zh">紧急程度评分仪表盘，实现实时可见性</span>
+              </li>
+              <li class="case-list__item">
+                <span data-lang="en">Tailored discount suggestions based on criticality level</span>
+                <span data-lang="zh">基于紧急程度的定制折扣建议</span>
+              </li>
+              <li class="case-list__item">
+                <span data-lang="en">Generation of targeted promotional campaigns with justification</span>
+                <span data-lang="zh">生成带理由的精准促销活动</span>
+              </li>
+            </ul>
+
+            <p class="case-block__section-label">
+              <span data-lang="en">AI / User Interaction</span>
+              <span data-lang="zh">AI / 用户交互</span>
+            </p>
+            <ul class="case-list">
+              <li class="case-list__item">
+                <span data-lang="en">Dashboard with product criticality scores</span>
+                <span data-lang="zh">显示产品紧急程度评分的仪表盘</span>
+              </li>
+              <li class="case-list__item">
+                <span data-lang="en">Notifications alerting on at-risk products</span>
+                <span data-lang="zh">风险产品警报通知</span>
+              </li>
+              <li class="case-list__item">
+                <span data-lang="en">AI proposes solutions with reasoning — user approves</span>
+                <span data-lang="zh">AI 提出带推理的解决方案——用户审批确认</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Section 07: Key Learnings ── -->
+      <div class="case-learnings container reveal">
+        <h2 class="case-learnings__title">
+          <span data-lang="en">Key Learnings</span>
+          <span data-lang="zh">关键收获</span>
+        </h2>
+        <p class="case-learnings__text">Placeholder: What did you learn from this project? What would you do differently? How did it shape your growth as a designer?</p>
+      </div>
+
+    </article>
+
+    <!-- ========== PROJECT NAVIGATION ========== -->
+    <div class="container">
+      <nav class="project-nav">
+        <a href="decathlon.html" class="project-nav__link project-nav__link--back">
+          <span class="project-nav__arrow">&larr;</span>
+          <span data-lang="en">Previous Project</span><span data-lang="zh">上一个项目</span>
+        </a>
+        <a href="project-4.html" class="project-nav__link project-nav__link--next">
+          <div>
+            <span><span data-lang="en">Next Project</span><span data-lang="zh">下一个项目</span></span>
+            <span class="project-nav__name">Project Delta</span>
+          </div>
+          <span class="project-nav__arrow">&rarr;</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- ========== CONTACT ========== -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2 class="section-title reveal">
+          <span data-lang="en">Get in Touch</span>
+          <span data-lang="zh">联系我</span>
+        </h2>
+        <p class="contact__text reveal" data-delay="100">
+          <span data-lang="en">Interested in working together? Let's talk.</span>
+          <span data-lang="zh">想合作？欢迎联系。</span>
+        </p>
+        <a href="mailto:hello@paulbarroux.com" class="contact__email reveal" data-delay="200">hello@paulbarroux.com</a>
+
+        <div class="contact__wechat reveal" data-delay="300">
+          <p class="contact__wechat-label">
+            <span data-lang="en">or find me on WeChat</span>
+            <span data-lang="zh">或在微信添加我</span>
+          </p>
+          <div class="contact__wechat-card">
+            <div class="contact__wechat-qr" aria-label="WeChat QR code">
+              <span data-lang="en">QR&nbsp;code<br>coming&nbsp;soon</span>
+              <span data-lang="zh">二维码<br>稍后上传</span>
+            </div>
+            <div class="contact__wechat-info">
+              <span class="contact__wechat-name">Paul Barroux</span>
+              <span class="contact__wechat-id">wxid_ddw1kou7jqh212</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__copy">
+        <span data-lang="en">&copy; 2026 Paul Barroux &mdash; All rights reserved.</span>
+        <span data-lang="zh">&copy; 2026 Paul Barroux &mdash; 保留所有权利。</span>
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
