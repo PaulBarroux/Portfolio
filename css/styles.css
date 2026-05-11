@@ -972,6 +972,10 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
   color: var(--color-text-secondary);
 }
 
+.case-header__meta + .case-header__meta {
+  margin-top: var(--space-xs);
+}
+
 /* Header hero image (replaces blank spacer when a real image is provided) */
 .case-header__hero-img {
   width: 100%;
