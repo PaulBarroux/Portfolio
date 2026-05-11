@@ -3063,3 +3063,37 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
     font-size: 48px;
   }
 }
+
+/* ============================================
+   WEPLAN — Mobile screen rows & DS images
+   ============================================ */
+
+/* Portrait phone screens: remove placeholder, let image size naturally */
+.case-screens__item:has(img) {
+  aspect-ratio: unset;
+  background: none;
+  padding: 0;
+  display: block;
+}
+
+.case-screens__item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+}
+
+/* Design system image blocks (landscape exports) */
+.case-ds__image:has(img) {
+  aspect-ratio: unset;
+  background: none;
+  border: none;
+  display: block;
+}
+
+.case-ds__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
