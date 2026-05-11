@@ -1355,6 +1355,21 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
   background: none;
   display: block;
 }
+.case-callout__image:has(img) {
+  aspect-ratio: unset;
+  background: none;
+  display: block;
+}
+.case-problem__image:has(img) {
+  aspect-ratio: unset;
+  background: none;
+  display: block;
+}
+.case-posts__image:has(img) {
+  aspect-ratio: unset;
+  background: none;
+  display: block;
+}
 .case-block__image img,
 .case-wireframes__image img {
   width: 100%;
@@ -1367,6 +1382,19 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
   height: auto;
   display: block;
   border-radius: 12px;
+}
+.case-callout__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+.case-problem__image img,
+.case-posts__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
 }
 /* Desktop project card images */
 .projects__slide-image:has(img) {
