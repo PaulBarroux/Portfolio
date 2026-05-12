@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="About Paul Barroux · UX/UI Designer, 3rd-year student at L'École de Design Nantes Atlantique.">
+  <meta name="description" content="About Paul Barroux · UX Designer seeking internship (Oct–Dec 2025). 3rd-year student at L'École de Design Nantes Atlantique.">
   <meta property="og:title" content="About · Paul Barroux">
-  <meta property="og:description" content="UX/UI Designer crafting thoughtful digital experiences.">
+  <meta property="og:description" content="UX Designer combining analytical rigor with visual detail. Currently seeking a UX Design internship.">
   <meta property="og:type" content="website">
   <title>About · Paul Barroux</title>
 
@@ -16,6 +16,326 @@
   <link rel="preload" href="assets/fonts/Inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/DMSerifDisplay-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    /* ============================================
+       ABOUT PAGE — page-specific layout
+       ============================================ */
+
+    /* ── Hero ── */
+    .about-hero {
+      padding: calc(var(--nav-height) + var(--space-xl)) 0 var(--space-lg);
+    }
+
+    .about-hero__grid {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: var(--space-lg);
+      align-items: start;
+    }
+
+    /* Photo placeholder — 200×200 square */
+    .about-hero__photo {
+      width: 200px;
+      height: 200px;
+      background: var(--color-tint);
+      border: 1px solid var(--color-surface-border);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 56px;
+      color: var(--color-primary);
+      opacity: 0.25;
+      user-select: none;
+      flex-shrink: 0;
+    }
+
+    /* Remove placeholder styling when real image present */
+    .about-hero__photo:has(img) {
+      background: none;
+      opacity: 1;
+      overflow: hidden;
+    }
+
+    .about-hero__photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 12px;
+    }
+
+    /* Text block */
+    .about-hero__name {
+      font-family: var(--font-heading);
+      font-size: var(--text-hero);
+      line-height: 1.1;
+      color: var(--color-text);
+      margin-bottom: 4px;
+    }
+
+    .about-hero__role {
+      font-size: var(--text-subtitle);
+      color: var(--color-text-secondary);
+      font-weight: 400;
+      margin-bottom: var(--space-md);
+    }
+
+    .about-hero__bio {
+      font-size: var(--text-body);
+      line-height: 1.7;
+      color: var(--color-text-secondary);
+      max-width: 520px;
+      margin-bottom: var(--space-md);
+    }
+
+    /* Availability status badge */
+    .about-availability {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+      padding: 8px 14px;
+      background: rgba(43, 89, 195, 0.07);
+      border: 1px solid rgba(43, 89, 195, 0.2);
+      border-radius: 999px;
+      font-size: var(--text-small);
+      font-weight: 500;
+      color: var(--color-primary);
+      line-height: 1.4;
+    }
+
+    .about-availability__dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #27ae60;
+      flex-shrink: 0;
+    }
+
+    /* ── Shared section layout ── */
+    .about-section {
+      padding: var(--space-lg) 0;
+      border-top: 1px solid var(--color-divider);
+    }
+
+    .about-section__title {
+      font-family: var(--font-heading);
+      font-size: var(--text-case-section);
+      line-height: var(--leading-heading);
+      color: var(--color-text);
+      margin-bottom: var(--space-lg);
+    }
+
+    /* ── Two-column layout for Experience + Education ── */
+    .about-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: start;
+    }
+
+    .about-column__title {
+      font-family: var(--font-heading);
+      font-size: var(--text-case-section);
+      line-height: var(--leading-heading);
+      color: var(--color-text);
+      margin-bottom: var(--space-lg);
+    }
+
+    /* ── Experience / Education entries — stacked (no date column) ── */
+    .about-entry {
+      display: block;
+    }
+
+    .about-entry + .about-entry {
+      margin-top: var(--space-md);
+      padding-top: var(--space-md);
+      border-top: 1px solid var(--color-divider);
+    }
+
+    .about-entry__period {
+      font-size: var(--text-label);
+      font-weight: 500;
+      letter-spacing: var(--tracking-label);
+      text-transform: uppercase;
+      color: var(--color-text-secondary);
+      margin-bottom: 4px;
+    }
+
+    .about-entry__role {
+      font-family: var(--font-heading);
+      font-size: 22px;
+      line-height: var(--leading-heading);
+      color: var(--color-text);
+      margin-bottom: 4px;
+    }
+
+    .about-entry__company {
+      font-size: var(--text-label);
+      font-weight: 600;
+      letter-spacing: var(--tracking-label);
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: var(--space-sm);
+    }
+
+    .about-entry__body {
+      font-size: var(--text-body);
+      line-height: var(--leading-body);
+      color: var(--color-text-secondary);
+      max-width: 65ch;
+    }
+
+    /* ── Timeline (education column) ── */
+    .about-timeline {
+      position: relative;
+      padding-left: 22px;
+    }
+
+    /* Vertical connecting line */
+    .about-timeline::before {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 6px;
+      bottom: 6px;
+      width: 1px;
+      background: var(--color-divider);
+    }
+
+    /* Dot per entry */
+    .about-timeline .about-entry {
+      position: relative;
+    }
+
+    .about-timeline .about-entry::before {
+      content: '';
+      position: absolute;
+      left: -21px;
+      top: 3px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--color-bg);
+      border: 2px solid var(--color-primary);
+      box-sizing: border-box;
+    }
+
+    /* Replace border-top divider with spacing only — line is the separator */
+    .about-timeline .about-entry + .about-entry {
+      border-top: none;
+    }
+
+    /* ── Skills groups — tighter spacing ── */
+    .about-skills-group {
+      margin-bottom: var(--space-md);
+    }
+
+    .about-skills-group:last-child {
+      margin-bottom: 0;
+    }
+
+.about-skills-group__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* ── Languages — card row ── */
+    .about-lang-cards {
+      display: flex;
+      gap: var(--space-md);
+    }
+
+    .about-lang-card {
+      flex: 1;
+      padding: var(--space-md);
+      background: var(--color-surface);
+      border: 1px solid var(--color-surface-border);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .about-lang-card__name {
+      font-size: var(--text-body);
+      font-weight: 600;
+      color: var(--color-text);
+    }
+
+    .about-lang-card__level {
+      font-size: var(--text-small);
+      color: var(--color-text-secondary);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ── Expertise block — override homepage padding when on about page ── */
+    [data-page="about"] .expertise {
+      padding: var(--space-xl) 0;
+    }
+
+    [data-page="about"] .expertise .about-section__title {
+      margin-bottom: var(--space-lg);
+    }
+
+    /* ── Responsive — tablet ── */
+    @media (max-width: 1024px) {
+      .about-hero__grid {
+        gap: var(--space-md);
+      }
+
+      .about-columns {
+        gap: var(--space-lg);
+      }
+
+    }
+
+    /* ── Responsive — mobile ── */
+    @media (max-width: 767px) {
+      .about-hero {
+        padding-bottom: var(--space-md);
+      }
+
+      .about-hero__grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+      }
+
+      .about-hero__photo {
+        width: 140px;
+        height: 140px;
+      }
+
+      .about-hero__name {
+        font-size: var(--text-case-title);
+      }
+
+      .about-section__title {
+        margin-bottom: var(--space-md);
+      }
+
+      .about-columns {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+      }
+
+      .about-column__title {
+        margin-bottom: var(--space-md);
+      }
+
+      .about-lang-cards {
+        flex-direction: column;
+        gap: var(--space-sm);
+      }
+
+    }
+  </style>
 </head>
 <body data-page="about">
 
@@ -74,47 +394,227 @@
 
   <main>
 
-    <!-- ========== PAGE HERO ========== -->
-    <section class="page-hero">
+    <!-- ========== HERO / INTRO ========== -->
+    <section class="about-hero">
       <div class="container">
-        <h1 class="page-hero__title reveal">
-          <span data-lang="en">About</span>
-          <span data-lang="zh">关于</span>
-        </h1>
+        <div class="about-hero__grid">
+
+          <!-- Photo -->
+          <div class="about-hero__photo reveal" aria-hidden="true">
+            <!-- Photo: portrait Paul Barroux -->
+            P
+          </div>
+
+          <!-- Text -->
+          <div class="reveal" data-delay="100">
+            <h1 class="about-hero__name">
+              <span data-lang="en">Paul Barroux</span>
+              <span data-lang="zh">保罗·巴鲁</span>
+            </h1>
+            <p class="about-hero__role">
+              <span data-lang="en">UX Designer</span>
+              <span data-lang="zh">UX 设计师</span>
+            </p>
+            <p class="about-hero__bio">
+              <span data-lang="en">I am a third-year UX Design student at L'École de Design Nantes Atlantique, with a focus on user research and interface design. I combine analytical rigor with a strong attention to visual detail to design experiences that are both functional and considered.</span>
+              <span data-lang="zh">我是南特大西洋设计学院三年级UX设计专业学生，专注于用户研究与界面设计。我将分析严谨性与对视觉细节的高度关注相结合，设计兼具功能性与深度的用户体验。</span>
+            </p>
+            <div class="about-availability">
+              <span class="about-availability__dot"></span>
+              <span>
+                <span data-lang="en">Currently seeking a UX Design internship for October — December 2025.</span>
+                <span data-lang="zh">目前正在寻找2025年10月至12月的UX设计实习机会。</span>
+              </span>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
 
-    <!-- ========== BIO ========== -->
-    <section class="about-bio">
+    <!-- ========== EXPERIENCE & EDUCATION (side-by-side) ========== -->
+    <section class="about-section">
       <div class="container">
-        <p class="about-bio__text reveal">
-          <span data-lang="en">I'm Paul Barroux, a UX/UI designer currently in my third year at L'&Eacute;cole de Design Nantes Atlantique. My approach to design is rooted in understanding people: their needs, frustrations, and aspirations, and translating those insights into meaningful digital experiences.</span>
-          <span data-lang="zh">我是 Paul Barroux，一名 UX/UI 设计师，目前就读于法国南特大西洋设计学院 (L'&Eacute;cole de Design Nantes Atlantique) 三年级。我的设计方法源于对人的理解：他们的需求、痛点与愿望，并将这些洞察转化为有意义的数字体验。</span>
-        </p>
+        <div class="about-columns">
 
-        <p class="about-bio__text reveal" data-delay="100">
-          <span data-lang="en">I believe great design lives at the intersection of research and aesthetics. Every project I take on begins with deep listening: user interviews, contextual research, and careful analysis of the problem space. From there, I move through wireframing, prototyping, and iterative testing to arrive at solutions that are both functional and beautiful.</span>
-          <span data-lang="zh">我相信优秀的设计存在于研究与美学的交汇处。每个项目都始于深度倾听：用户访谈、情境研究以及对问题的细致分析。在此基础上，我通过线框图、原型设计和迭代测试，最终得出兼具功能与美感的方案。</span>
-        </p>
+          <!-- Experience column -->
+          <div class="reveal">
+            <h2 class="about-column__title">
+              <span data-lang="en">Experience</span>
+              <span data-lang="zh">工作经历</span>
+            </h2>
 
-        <p class="about-bio__text reveal" data-delay="200">
-          <span data-lang="en">Beyond screens, I have a growing interest in the technical side of design. I work with HTML, CSS, and JavaScript to prototype ideas, and I'm exploring 3D and motion design to push the boundaries of what digital experiences can feel like.</span>
-          <span data-lang="zh">除了屏幕之外，我对设计的技术层面也越来越感兴趣。我使用 HTML、CSS 和 JavaScript 制作原型，同时探索 3D 与动效设计，以拓展数字体验的可能性。</span>
-        </p>
+            <div class="about-entry">
+              <p class="about-entry__period">
+                <span data-lang="en">2025 · 2 months</span>
+                <span data-lang="zh">2025 · 2个月</span>
+              </p>
+              <p class="about-entry__role">
+                <span data-lang="en">UX/UI Designer Assistant</span>
+                <span data-lang="zh">UX/UI设计师助理</span>
+              </p>
+              <p class="about-entry__company">
+                <span data-lang="en">Aptatio 3D — Nantes</span>
+                <span data-lang="zh">Aptatio 3D — 南特</span>
+              </p>
+              <p class="about-entry__body">
+                <span data-lang="en">At Aptatio, a 3D engineering studio based in Nantes, I worked on several projects combining interface design, product design, and digital innovation. I contributed to the redesign of an interactive kiosk for the Cité des Congrès de Nantes (Immercité), the design of interfaces for a scientific tablet application (Gwaleen App), and the creation of a visual identity and infographic for a European marine research project (AmonboFish). My role involved mapping user journeys, designing and prototyping interfaces in Figma, and collaborating with design, development, and 3D teams to improve the overall user experience.</span>
+                <span data-lang="zh">在南特3D工程工作室Aptatio，我参与了多个融合界面设计、产品设计与数字创新的项目。我参与了南特会议中心互动终端的重新设计（Immercité）、科学平板应用程序的界面设计（Gwaleen App），以及一个欧洲海洋研究项目的视觉识别与信息图表创作（AmonboFish）。我的职责包括梳理用户旅程、在Figma上设计与原型制作，并与设计、开发和3D团队协作以提升整体用户体验。</span>
+              </p>
+            </div>
+          </div>
 
-        <p class="about-bio__text reveal" data-delay="300">
-          <span data-lang="en">When I'm not designing, you'll find me [placeholder for hobbies/interests (fill this in later)].</span>
-          <span data-lang="zh">不工作时，你可以找到我 [兴趣爱好待填]。</span>
-        </p>
+          <!-- Education column -->
+          <div class="reveal" data-delay="100">
+            <h2 class="about-column__title">
+              <span data-lang="en">Education</span>
+              <span data-lang="zh">教育背景</span>
+            </h2>
+
+            <div class="about-timeline">
+
+              <div class="about-entry">
+                <p class="about-entry__period">
+                  <span data-lang="en">2022 — present</span>
+                  <span data-lang="zh">2022 — 至今</span>
+                </p>
+                <p class="about-entry__role">
+                  <span data-lang="en">Bachelor in UX/UI Design</span>
+                  <span data-lang="zh">UX/UI设计学士</span>
+                </p>
+                <p class="about-entry__company">
+                  <span data-lang="en">L'École de Design Nantes Atlantique</span>
+                  <span data-lang="zh">南特大西洋设计学院</span>
+                </p>
+                <p class="about-entry__body">
+                  <span data-lang="en">3rd year — currently enrolled</span>
+                  <span data-lang="zh">三年级在读</span>
+                </p>
+              </div>
+
+              <div class="about-entry">
+                <p class="about-entry__period">
+                  <span data-lang="en">2017 — 2023</span>
+                  <span data-lang="zh">2017 — 2023</span>
+                </p>
+                <p class="about-entry__role">
+                  <span data-lang="en">French Baccalauréat</span>
+                  <span data-lang="zh">法国高中毕业会考</span>
+                </p>
+                <p class="about-entry__company">
+                  <span data-lang="en">FASNY — French American School of New York</span>
+                  <span data-lang="zh">纽约法美学校（FASNY）</span>
+                </p>
+                <p class="about-entry__body">
+                  <span data-lang="en">Secondary education completed in New York, United States.</span>
+                  <span data-lang="zh">在美国纽约完成中学教育。</span>
+                </p>
+              </div>
+
+              <div class="about-entry">
+                <p class="about-entry__period">
+                  <span data-lang="en">2008 — 2017</span>
+                  <span data-lang="zh">2008 — 2017</span>
+                </p>
+                <p class="about-entry__role">
+                  <span data-lang="en">Primary &amp; Middle School</span>
+                  <span data-lang="zh">小学及初中教育</span>
+                </p>
+                <p class="about-entry__company">
+                  <span data-lang="en">LFIP — Lycée Français International de Pékin</span>
+                  <span data-lang="zh">北京法国国际学校（LFIP）</span>
+                </p>
+                <p class="about-entry__body">
+                  <span data-lang="en">French international education completed in Beijing, China.</span>
+                  <span data-lang="zh">在中国北京完成法国国际教育。</span>
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
 
-    <!-- ========== SKILLS ========== -->
-    <section class="about-skills" id="skills">
+    <!-- ========== LANGUAGES ========== -->
+    <section class="about-section">
       <div class="container">
-        <h2 class="section-title reveal">
-          <span data-lang="en">Skills</span>
-          <span data-lang="zh">技能</span>
+        <h2 class="about-section__title reveal">
+          <span data-lang="en">Languages</span>
+          <span data-lang="zh">语言能力</span>
+        </h2>
+
+        <div class="about-lang-cards reveal">
+
+          <!-- French -->
+          <div class="about-lang-card">
+            <span class="about-lang-card__name">
+              <span data-lang="en">French</span>
+              <span data-lang="zh">法语</span>
+            </span>
+            <span class="about-lang-card__level">
+              <span data-lang="en">Native</span>
+              <span data-lang="zh">母语</span>
+            </span>
+          </div>
+
+          <!-- English -->
+          <div class="about-lang-card">
+            <span class="about-lang-card__name">
+              <span data-lang="en">English</span>
+              <span data-lang="zh">英语</span>
+            </span>
+            <span class="about-lang-card__level">
+              <span data-lang="en">Near native</span>
+              <span data-lang="zh">接近母语水平</span>
+              <span class="tag" aria-label="TOEIC score">TOEIC 980/990</span>
+            </span>
+          </div>
+
+          <!-- Spanish -->
+          <div class="about-lang-card">
+            <span class="about-lang-card__name">
+              <span data-lang="en">Spanish</span>
+              <span data-lang="zh">西班牙语</span>
+            </span>
+            <span class="about-lang-card__level">
+              <span data-lang="en">Intermediate</span>
+              <span data-lang="zh">中级</span>
+            </span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== TOOLS ========== -->
+    <section class="about-section">
+      <div class="container">
+        <h2 class="about-section__title reveal">
+          <span data-lang="en">Tools</span>
+          <span data-lang="zh">工具</span>
+        </h2>
+
+        <div class="about-skills-group reveal">
+          <div class="about-skills-group__tags">
+            <span class="tag">Figma</span>
+            <span class="tag">FigJam</span>
+            <span class="tag">Notion</span>
+            <span class="tag">Claude</span>
+            <span class="tag">ChatGPT</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========== EXPERTISE ========== -->
+    <section class="expertise">
+      <div class="container">
+        <h2 class="about-section__title reveal">
+          <span data-lang="en">Expertise</span>
+          <span data-lang="zh">专业能力</span>
         </h2>
         <div class="expertise__grid">
 
@@ -128,8 +628,6 @@
               <li class="expertise__item"><span data-lang="en">UX Audit</span><span data-lang="zh">UX 审计</span></li>
               <li class="expertise__item"><span data-lang="en">Personas &amp; User Journeys</span><span data-lang="zh">用户画像与用户旅程</span></li>
               <li class="expertise__item"><span data-lang="en">Competitive Analysis</span><span data-lang="zh">竞品分析</span></li>
-              <li class="expertise__item"><span data-lang="en">Usability Testing</span><span data-lang="zh">可用性测试</span></li>
-              <li class="expertise__item"><span data-lang="en">Contextual Inquiry</span><span data-lang="zh">情境调查</span></li>
             </ul>
           </div>
 
@@ -144,8 +642,6 @@
               <li class="expertise__item"><span data-lang="en">Design Systems</span><span data-lang="zh">设计系统</span></li>
               <li class="expertise__item"><span data-lang="en">Prototyping</span><span data-lang="zh">原型设计</span></li>
               <li class="expertise__item"><span data-lang="en">User Testing &amp; Iterations</span><span data-lang="zh">用户测试与迭代</span></li>
-              <li class="expertise__item"><span data-lang="en">Responsive Design</span><span data-lang="zh">响应式设计</span></li>
-              <li class="expertise__item"><span data-lang="en">Accessibility</span><span data-lang="zh">无障碍设计</span></li>
             </ul>
           </div>
 
@@ -156,8 +652,6 @@
             </span>
             <ul class="expertise__list">
               <li class="expertise__item">HTML, CSS, JavaScript</li>
-              <li class="expertise__item">Figma</li>
-              <li class="expertise__item"><span data-lang="en">Adobe Creative Suite</span><span data-lang="zh">Adobe 创意套件</span></li>
               <li class="expertise__item"><span data-lang="en">3D (basics)</span><span data-lang="zh">3D（基础）</span></li>
               <li class="expertise__item"><span data-lang="en">Motion Design (basics)</span><span data-lang="zh">动效设计（基础）</span></li>
             </ul>
