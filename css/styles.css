@@ -2796,6 +2796,13 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
   .case-insights__grid {
     grid-template-columns: 1fr;
   }
+
+  /* Re-assert container horizontal padding — must come last so case-* shorthand
+     rules (padding: X 0) earlier in this block cannot zero out left/right gutter */
+  .container {
+    padding-left: var(--padding-tablet);
+    padding-right: var(--padding-tablet);
+  }
 }
 
 /* ============================================
@@ -3122,6 +3129,13 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
 
   .case-insights__num {
     font-size: 48px;
+  }
+
+  /* Re-assert container horizontal padding — must come last so case-* shorthand
+     rules (padding: X 0) earlier in this block cannot zero out left/right gutter */
+  .container {
+    padding-left: var(--padding-mobile);
+    padding-right: var(--padding-mobile);
   }
 }
 
