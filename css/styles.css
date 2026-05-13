@@ -241,9 +241,9 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
   margin: 0 auto;
   padding: 0 var(--padding-desktop);
   height: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
 }
 
 .navbar__logo {
@@ -260,7 +260,16 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
 .navbar__links {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: var(--space-lg);
+}
+
+/* Right-side slot: lang toggle + hamburger */
+.navbar__end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-md);
 }
 
 /* Language toggle (EN / 中) */
@@ -268,7 +277,7 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
   display: flex;
   align-items: center;
   gap: 6px;
-  margin-left: var(--space-lg);
+  margin-left: 0;
   font-size: var(--text-label);
   font-weight: 600;
   letter-spacing: var(--tracking-label);
@@ -293,6 +302,30 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
 .lang-toggle__sep {
   color: var(--color-divider);
   user-select: none;
+}
+
+/* CV download button */
+.navbar__cv {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--text-small);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  padding: 3px 9px;
+  border: 1px solid var(--color-divider);
+  border-radius: 999px;
+  transition: color var(--duration) var(--ease), border-color var(--duration) var(--ease);
+  white-space: nowrap;
+}
+
+.navbar__cv:hover {
+  color: var(--color-primary);
+  border-color: rgba(43, 89, 195, 0.4);
+}
+
+.navbar__cv svg {
+  flex-shrink: 0;
 }
 
 .navbar__link {
@@ -2775,8 +2808,18 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
     --space-section: 60px;
   }
 
-  /* Nav: show hamburger, hide links */
+  /* Nav: switch back to flex so logo/hamburger stay at opposite ends */
+  .navbar__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
   .navbar__links {
+    display: none;
+  }
+
+  /* Hide desktop lang toggle — mobile version lives in mobile-menu */
+  .navbar__end .lang-toggle {
     display: none;
   }
 

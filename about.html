@@ -63,6 +63,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center 18%;
       display: block;
       border-radius: 12px;
     }
@@ -111,6 +112,33 @@
       height: 7px;
       border-radius: 50%;
       background: #27ae60;
+      flex-shrink: 0;
+    }
+
+    /* Badge + CV link stacked block */
+    .about-hero__cta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-sm);
+    }
+
+    /* CV download link — below availability badge */
+    .about-cv-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: var(--text-small);
+      font-weight: 500;
+      color: var(--color-primary);
+      transition: color var(--duration) var(--ease);
+    }
+
+    .about-cv-link:hover {
+      color: var(--color-primary-hover);
+    }
+
+    .about-cv-link svg {
       flex-shrink: 0;
     }
 
@@ -356,17 +384,24 @@
           <span data-lang="en">Contact</span>
           <span data-lang="zh">联系</span>
         </a>
+        <a href="assets/pdf/CV_Paul_Barroux.pdf" download class="navbar__cv" aria-label="Download Resume">
+          <svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 1v6M3 5l2.5 2.5L8 5"/><path d="M1.5 9.5h8"/></svg>
+          <span data-lang="en">Resume</span>
+          <span data-lang="zh">简历</span>
+        </a>
+      </div>
+      <div class="navbar__end">
         <div class="lang-toggle" role="group" aria-label="Language">
           <button class="lang-toggle__btn active" data-set-lang="en" type="button" aria-label="English">EN</button>
           <span class="lang-toggle__sep" aria-hidden="true">/</span>
           <button class="lang-toggle__btn" data-set-lang="zh" type="button" aria-label="中文">中</button>
         </div>
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
       </div>
-      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span class="hamburger__line"></span>
-        <span class="hamburger__line"></span>
-        <span class="hamburger__line"></span>
-      </button>
     </nav>
   </header>
 
@@ -385,6 +420,10 @@
       <span data-lang="en">Contact</span>
       <span data-lang="zh">联系</span>
     </a>
+    <a href="assets/pdf/CV_Paul_Barroux.pdf" download class="mobile-menu__link">
+      <span data-lang="en">Resume</span>
+      <span data-lang="zh">简历</span>
+    </a>
     <div class="lang-toggle lang-toggle--mobile" role="group" aria-label="Language">
       <button class="lang-toggle__btn active" data-set-lang="en" type="button">EN</button>
       <span class="lang-toggle__sep" aria-hidden="true">/</span>
@@ -400,9 +439,8 @@
         <div class="about-hero__grid">
 
           <!-- Photo -->
-          <div class="about-hero__photo reveal" aria-hidden="true">
-            <!-- Photo: portrait Paul Barroux -->
-            P
+          <div class="about-hero__photo reveal">
+            <img src="assets/images/pbarroux.jpg" alt="Paul Barroux" loading="eager">
           </div>
 
           <!-- Text -->
@@ -419,12 +457,19 @@
               <span data-lang="en">I am a third-year UX Design student at L'École de Design Nantes Atlantique, with a focus on user research and interface design. I combine analytical rigor with a strong attention to visual detail to design experiences that are both functional and considered.</span>
               <span data-lang="zh">我是南特大西洋设计学院三年级UX设计专业学生，专注于用户研究与界面设计。我将分析严谨性与对视觉细节的高度关注相结合，设计兼具功能性与深度的用户体验。</span>
             </p>
-            <div class="about-availability">
-              <span class="about-availability__dot"></span>
-              <span>
-                <span data-lang="en">Currently seeking a UX Design internship for October — December 2025.</span>
-                <span data-lang="zh">目前正在寻找2025年10月至12月的UX设计实习机会。</span>
-              </span>
+            <div class="about-hero__cta">
+              <div class="about-availability">
+                <span class="about-availability__dot"></span>
+                <span>
+                  <span data-lang="en">Currently seeking a UX Design internship for October — December 2025.</span>
+                  <span data-lang="zh">目前正在寻找2025年10月至12月的UX设计实习机会。</span>
+                </span>
+              </div>
+              <a href="assets/pdf/CV_Paul_Barroux.pdf" download class="about-cv-link" aria-label="Download Resume">
+                <svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 1v6M3 5l2.5 2.5L8 5"/><path d="M1.5 9.5h8"/></svg>
+                <span data-lang="en">Download Resume</span>
+                <span data-lang="zh">下载简历</span>
+              </a>
             </div>
           </div>
 
