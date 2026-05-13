@@ -108,7 +108,6 @@
 }
 
 html {
-  scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -604,7 +603,7 @@ html[lang="zh"] [data-lang="zh"] { display: contents; }
 
 /* Wrapper creates scrollable space for sticky to live in */
 .projects-wrapper {
-  height: 500vh; /* 100vh per project */
+  height: 400vh; /* 80vh per project */
   position: relative;
 }
 
